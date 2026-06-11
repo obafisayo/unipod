@@ -49,7 +49,7 @@ function Navbar() {
 
   return (
     <header
-      className={`fixed top-[1.5rem] right-[2rem] left-[2rem] z-[200] md:top-[4rem] md:right-[var(--content-padding)] md:left-[var(--content-padding)] navigation is-home-link-shown${pathname === '/' ? ' is-home' : ''}`}
+      className={`fixed top-[1.5rem] right-[2rem] left-[2rem] z-[200] md:top-[4rem] md:right-[var(--content-padding)] md:left-[var(--content-padding)] navigation ${pathname !== '/' ? 'is-home-link-shown' : ''} ${pathname === '/' ? 'is-home' : ''}`.trim()}
       ref={navRef}
     >
       <style dangerouslySetInnerHTML={{__html: `
@@ -137,7 +137,7 @@ function Navbar() {
           <span className="navigation-toggle__icon transition-transform duration-300 ease-in-out absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[2.3rem] h-[0.1rem] bg-[#0c0c0c] lg:hidden"></span>
           <span className="navigation-toggle__icon navigation-toggle__icon--secondary transition-transform duration-300 ease-in-out absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[2.3rem] h-[0.1rem] bg-[#0c0c0c] lg:hidden"></span>
         </button>
-        <div className="navigation__home-link-wrapper md:w-0">
+        <div className="navigation__home-link-wrapper">
           <Totop component={
             <Link
               className="navigation__home-link transition-colors duration-300 ease-in-out flex justify-center items-center w-[4.2rem] h-[4.2rem] bg-white rounded-[0.4rem] md:w-[3.6rem] md:h-[3.6rem] active-logo hover:bg-[#797af2]"

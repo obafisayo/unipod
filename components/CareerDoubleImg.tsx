@@ -30,7 +30,7 @@ function CareerDoubleImg() {
           </div>
           <div className="di-secondary relative w-full h-auto">
             <Image src={office3_400} width={1800} height={1800} alt="" sizes="(min-width: 1440px) 1200px, (min-width: 768px) 800px, 400px" className="max-w-full h-auto w-full mt-[12rem] md:mt-0" loading="lazy" />
-          </div>>
+          </div>
         </div>
       </section>
     </section>

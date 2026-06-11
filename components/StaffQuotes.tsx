@@ -74,10 +74,10 @@ function StaffQuotes() {
             </ul>
             <nav className="quote__navigation flex gap-[1.2rem] mt-[4rem] md:mt-0 md:self-end md:-translate-y-full" aria-label="Quote Slider Navigation">
               <button className="quote__navigation-button quote__navigation-button--prev bg-transparent p-0 w-fit border-none appearance-none m-[0_0_0_-1.2rem] cursor-pointer" aria-label="Go to previous quote" onClick={handleBackwardClick} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-                <Svg caree={'0'} arrowLeft hov={hover} />
+                <Svg arrowLeft hov={hover} />
               </button>
               <button className="quote__navigation-button quote__navigation-button--next bg-transparent p-0 w-fit border-none appearance-none m-[0_0_0_-1.2rem] cursor-pointer" aria-label="Go to next quote" onClick={handleForwardClick} onMouseEnter={() => setHover2(true)} onMouseLeave={() => setHover2(false)}>
-                <Svg caree={'0'} arrowRight hov={hover2} />
+                <Svg arrowRight hov={hover2} />
               </button>
             </nav>
           </div>

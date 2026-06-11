@@ -22,8 +22,7 @@ function CareerListA({ text, href }: CareerListAProps) {
       <address className="transition-opacity duration-300 ease-in-out font-neue-haas text-[1.4rem] font-medium leading-[1.2] tracking-[0] text-white opacity-60 not-italic block">Sunnyvale, CA</address>
       <h1 className="transition-[background-size] duration-300 ease-in-out font-neue-haas text-[1.8rem] font-normal leading-[1.5] tracking-[-0.01em] m-0 text-white md:leading-[1.1] md:text-[2.2rem]">
         <span
-          className="transition-[background-size] duration-300 ease-in-out inline-block group-hover:[background-size:0_0.1rem,100%_0.1rem]"
-          style={{ background: 'linear-gradient(90deg,hsla(0,0%,100%,0),hsla(0,0%,100%,0)),linear-gradient(90deg,#fff,#fff)', backgroundSize: '100% 0.1rem,0 0.1rem', backgroundPosition: '100% 100%,0 100%', backgroundRepeat: 'no-repeat' }}
+          className="transition-[background-size] duration-300 ease-in-out inline-block group-hover:[background-size:0_0.1rem,100%_0.1rem] bg-[linear-gradient(90deg,transparent,transparent),linear-gradient(90deg,#fff,#fff)] bg-[length:100%_0.1rem,0_0.1rem] bg-[position:100%_100%,0_100%] bg-no-repeat"
         >{text}</span>
       </h1>
       <div className="flex justify-end w-full">

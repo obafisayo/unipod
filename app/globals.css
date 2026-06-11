@@ -78,13 +78,15 @@ a { color: inherit; }
 /* ---- Navigation (state classes used by JS) ---- */
 .navigation__home-link-wrapper {
   transition: margin .3s ease-in-out, width .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out;
-  width: 4.2rem;
+  width: 0;
   box-shadow: 0 0.4rem 2rem rgba(0,0,0,.08);
   z-index: 200;
   opacity: 0;
   visibility: hidden;
+  overflow: hidden;
 }
 .is-home-link-shown .navigation__home-link-wrapper {
+  width: 4.2rem;
   opacity: 1;
   visibility: visible;
 }

@@ -4,6 +4,7 @@ import Link from "next/link";
 import ContactModal from "./ContactModal";
 import ModalButton from "./ModalButton";
 import { FaXTwitter, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa6";
+import Slider from "./Slider";
 
 function Footer() {
   const [state, setState] = useState(false)
@@ -11,15 +12,11 @@ function Footer() {
   const contactModalRef = useRef<HTMLDivElement>(null)
 
   function handleContactOpen() {
-    const el = contactModalRef.current
-    if (el) el.classList.add('is-active')
     document.body.classList.add('is-unscrollable')
     setState(true)
   }
 
   function handleContactClose() {
-    const el = contactModalRef.current
-    if (el) el.classList.remove('is-active')
     document.body.classList.remove('is-unscrollable')
     setState(false)
   }
@@ -37,69 +34,27 @@ function Footer() {
 
   return (
     <>
-      <footer style={{ background: '#f6f6ef', padding: '10rem var(--content-padding) 4rem' }}>
-        {/* CSS counters for numbered nav links */}
-        <style>{`
-          .footer-nav-links { counter-reset: fc; }
-          .footer-nav-link {
-            counter-increment: fc;
-            display: flex; align-items: center;
-            font-family: pp-neue-machina-plain, serif;
-            text-transform: uppercase;
-            font-size: 5.2rem; font-weight: 400; letter-spacing: 0;
-            text-decoration: none; color: #0c0c0c;
-            padding: 1.5rem 1.7rem 2.5rem 0;
-            font-feature-settings: "ss12" on;
-            position: relative;
-          }
-          .footer-nav-link:first-child { padding-top: 0; }
-          .footer-nav-link:not(:first-child) { border-top: 0.1rem solid hsla(0,0%,5%,.2); }
-          .footer-nav-link::before {
-            content: counter(fc, decimal-leading-zero);
-            font-size: 2.4rem; font-weight: 500; margin-right: 3rem;
-            position: relative; top: 0.1rem;
-          }
-          .footer-nav-link-text { position: relative; display: inline-block; }
-          .footer-nav-link-text::after {
-            content: ""; position: absolute; left: 0; right: 0; bottom: 0.5rem;
-            height: 0.3rem; background: #0c0c0c;
-            transform: scaleX(0); transform-origin: left;
-            transition: transform 0.5s cubic-bezier(.16,1,.3,1);
-          }
-          .footer-nav-link:hover .footer-nav-link-text::after { transform: scaleX(1); }
-          @media screen and (max-width: 900px) {
-            .footer-nav-link { font-size: 3.4rem; padding: 1.5rem 0 1.7rem; }
-            .footer-nav-link::before { font-size: 1.8rem; margin-right: 2.4rem; }
-          }
-          .contact-modal.is-active { opacity: 1; visibility: visible; }
-          .contact-modal.is-active .contact-modal__content { transform: translateX(0); }
-        `}</style>
-
-        <div className="grid gap-[6rem] mx-auto max-w-[256rem]" style={{ gridTemplateColumns: '1fr 1fr' }}>
+      <footer className="bg-brand-cream pt-40 px-[var(--content-padding)] pb-16">
+        <div className="grid gap-24 mx-auto max-w-1024 md:grid-cols-2">
           {/* ── Left column ── */}
-          <div style={{ maxWidth: '46rem' }}>
+          <div className="w-full max-w-184">
             {/* Logo */}
             <img
               alt="AI UniPod"
               src="/assets/ai-unipod-logo.png"
-              style={{ width: '100%', maxWidth: '42rem', height: 'auto', marginBottom: '5rem' }}
+              className="w-full max-w-2xl h-auto mb-20"
             />
 
             {/* Newsletter */}
-            <h3 style={{ fontSize: '2.4rem', fontWeight: 500, margin: '0 0 0.4rem', letterSpacing: '-.01em', fontFamily: 'neue-haas-grot-text, sans-serif' }}>
+            <h3 className="text-[2.4rem] font-medium m-0 mb-[0.4rem] tracking-[-0.01em] font-neue-haas text-brand-dark">
               Stay in the loop
             </h3>
-            <p style={{ fontSize: '1.6rem', margin: '0 0 2rem', color: '#0c0c0c', fontFamily: 'neue-haas-grot-text, sans-serif' }}>
+            <p className="text-[1.6rem] m-0 mb-8 text-brand-dark font-neue-haas">
               Innovation stories, cohorts and open calls from the hub.
             </p>
             <form
               onSubmit={e => e.preventDefault()}
-              style={{
-                display: 'flex', alignItems: 'center', gap: '1rem',
-                background: '#fff', borderRadius: '4.6rem',
-                padding: '0.5rem 0.5rem 0.5rem 2.4rem',
-                boxShadow: '0 0.4rem 2rem rgba(0,0,0,.06)',
-              }}
+              className="flex items-center gap-4 bg-white rounded-[4.6rem] p-[0.5rem_0.5rem_0.5rem_2.4rem] shadow-[0_0.4rem_2rem_rgba(0,0,0,0.06)]"
             >
               <input
                 type="email"
@@ -107,22 +62,11 @@ function Footer() {
                 aria-label="Email Address"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                style={{
-                  flex: 1, minWidth: 0, border: 'none', outline: 'none',
-                  background: 'transparent', fontFamily: 'inherit',
-                  fontSize: '1.5rem', color: '#0c0c0c',
-                }}
+                className="flex-1 min-w-0 border-none outline-none bg-transparent font-inherit text-[1.5rem] text-brand-dark"
               />
               <button
                 type="submit"
-                style={{
-                  background: '#797af2', color: '#0c0c0c', border: 'none',
-                  borderRadius: '3rem', height: '4.6rem', padding: '0 2.6rem',
-                  fontFamily: 'inherit', fontSize: '1.4rem', fontWeight: 500, cursor: 'pointer',
-                  transition: 'background .4s ease',
-                }}
-                onMouseEnter={e => (e.currentTarget.style.background = '#c9c3de')}
-                onMouseLeave={e => (e.currentTarget.style.background = '#797af2')}
+                className="bg-brand-purple hover:bg-[#c9c3de] text-brand-dark border-none rounded-[3rem] h-[4.6rem] px-[2.6rem] font-inherit text-[1.4rem] font-medium cursor-pointer transition-colors duration-400 ease-in-out"
               >
                 Sign Up
               </button>
@@ -130,7 +74,7 @@ function Footer() {
 
             {/* Social icons */}
             <nav
-              style={{ display: 'flex', gap: '2.2rem', marginTop: '2.6rem', alignItems: 'center' }}
+              className="flex gap-[2.2rem] mt-[2.6rem] items-center"
               aria-label="Social media links"
             >
               {[
@@ -145,9 +89,7 @@ function Footer() {
                   aria-label={label}
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: '#0c0c0c', opacity: 0.85, transition: 'opacity .3s ease', display: 'flex', fontSize: '1.8rem' }}
-                  onMouseEnter={e => (e.currentTarget.style.opacity = '0.45')}
-                  onMouseLeave={e => (e.currentTarget.style.opacity = '0.85')}
+                  className="text-brand-dark opacity-85 hover:opacity-45 transition-opacity duration-300 ease-in-out flex text-[1.8rem]"
                 >
                   {icon}
                 </a>
@@ -155,46 +97,48 @@ function Footer() {
             </nav>
 
             {/* Contact Us button */}
-            <button
+            <div
               onClick={handleContactOpen}
-              style={{
-                marginTop: '7rem', display: 'inline-flex', alignItems: 'center', gap: '0.8rem',
-                background: 'none', border: 'none', padding: 0,
-                fontFamily: 'inherit', fontSize: '1.4rem', fontWeight: 500, color: '#0c0c0c', cursor: 'pointer',
-              }}
+              className="group mt-28 inline-flex items-center gap-[0.8rem] bg-transparent border-none p-0 font-inherit text-[1.4rem] font-medium text-brand-dark cursor-pointer"
             >
-              Contact Us
-              <svg viewBox="0 0 16 16" fill="none" style={{ width: '1.4rem', height: '1.4rem', color: '#ff7a45', transition: 'transform .3s ease' }}
-                onMouseEnter={e => (e.currentTarget.style.transform = 'translate(.3rem,-.3rem)')}
-                onMouseLeave={e => (e.currentTarget.style.transform = '')}>
-                <path d="M4 12L12 4M12 4H5M12 4v7" stroke="currentColor" strokeWidth="1.6" />
-              </svg>
-            </button>
+              <Slider
+                unslide
+                text="Contact Us"
+                icon
+                arrowUpRight
+                bordercolor="black"
+                ff="neue-haas-grot-text, sans-serif"
+              />
+            </div>
           </div>
 
           {/* ── Right column: numbered nav links ── */}
-          <nav className="footer-nav-links" aria-label="Site links">
-            <Link href="/about-us" className="footer-nav-link">
-              <span className="footer-nav-link-text">About Us</span>
-            </Link>
-            <Link href="/master-plan" className="footer-nav-link">
-              <span className="footer-nav-link-text">Master Plan</span>
-            </Link>
-            <Link href="/culture" className="footer-nav-link">
-              <span className="footer-nav-link-text">Culture</span>
-            </Link>
-            <Link href="/careers" className="footer-nav-link">
-              <span className="footer-nav-link-text">Careers</span>
-            </Link>
+          <nav className="[counter-reset:fc] flex flex-col" aria-label="Site links">
+            {[
+              { href: "/about-us", label: "About Us" },
+              { href: "/master-plan", label: "Master Plan" },
+              { href: "/culture", label: "Culture" },
+              { href: "/careers", label: "Careers" }
+            ].map(({ href, label }) => (
+              <Link 
+                key={href}
+                href={href}
+                {...linkHoverStyle}
+                className="group [counter-increment:fc] flex items-center font-machina uppercase text-[3.4rem] md:text-[5.2rem] font-normal tracking-normal no-underline text-brand-dark py-6 md:pt-6 md:pr-[1.7rem] md:pb-10 md:pl-0 border-t border-solid border-[hsla(0,0%,5%,.2)] first:pt-0 first:border-t-0 font-features-['ss12'_on] relative before:content-[counter(fc,decimal-leading-zero)] before:text-[1.8rem] md:before:text-[2.4rem] before:font-medium before:mr-[2.4rem] md:before:mr-12 before:relative before:top-[0.1rem]"
+              >
+                <span className="relative inline-block after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-2 after:h-[0.3rem] after:bg-brand-dark after:origin-left after:[transform:scaleX(var(--after-scale,0))] after:transition-transform after:duration-500 after:ease-[cubic-bezier(.16,1,.3,1)]">
+                  {label}
+                </span>
+              </Link>
+            ))}
           </nav>
         </div>
 
         {/* ── Bottom bar ── */}
         <div
-          className="flex items-center flex-wrap gap-[3.4rem] mx-auto max-w-[256rem]"
-          style={{ marginTop: '8rem' }}
+          className="flex items-center flex-wrap gap-[3.4rem] mx-auto max-w-1024 mt-32"
         >
-          <p style={{ color: 'hsla(0,0%,5%,.6)', margin: '0 auto 0 0', fontSize: '1.4rem', fontFamily: 'neue-haas-grot-text, sans-serif' }}>
+          <p className="text-[hsla(0,0%,5%,.6)] m-0 mr-auto text-[1.4rem] font-neue-haas">
             © 2026 AI UNIPOD · University of Lagos. All rights reserved.
           </p>
           {[
@@ -205,9 +149,7 @@ function Footer() {
             <Link
               key={href}
               href={href}
-              style={{ textDecoration: 'underline', color: '#0c0c0c', opacity: 0.6, fontSize: '1.4rem', transition: 'opacity .3s ease', fontFamily: 'neue-haas-grot-text, sans-serif' }}
-              onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
-              onMouseLeave={e => (e.currentTarget.style.opacity = '0.6')}
+              className="underline text-brand-dark opacity-60 hover:opacity-100 text-[1.4rem] transition-opacity duration-300 ease-in-out font-neue-haas"
             >
               {label}
             </Link>
@@ -217,25 +159,13 @@ function Footer() {
 
       {/* ── Contact modal ── */}
       <div
-        className="contact-modal"
         ref={contactModalRef}
-        aria-hidden={!state}
-        style={{
-          position: 'fixed', inset: 0, zIndex: 300,
-          display: 'flex', justifyContent: 'flex-end',
-          background: 'hsla(0,0%,5%,.5)',
-          opacity: 0, visibility: 'hidden',
-          transition: 'opacity .3s ease, visibility .3s ease',
-        }}
+        aria-hidden={!state ? "true" : "false"}
+        className={`fixed inset-0 z-300 flex justify-end bg-[hsla(0,0%,5%,.5)] transition-all duration-300 ease-in-out ${state ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
         onClick={e => { if (e.target === e.currentTarget) handleContactClose() }}
       >
         <article
-          className="contact-modal__content"
-          style={{
-            position: 'relative', width: '100%', maxWidth: '49.3rem',
-            background: '#f6f6ef', transform: 'translateX(100%)',
-            transition: 'transform .3s ease', overflowY: 'auto',
-          }}
+          className={`relative w-full max-w-[49.3rem] bg-brand-cream transition-transform duration-300 ease-in-out overflow-y-auto ${state ? 'translate-x-0' : 'translate-x-full'}`}
         >
           <ModalButton ariaLabel="Close contact form" onClick={handleContactClose} />
           <ContactModal />

@@ -1,12 +1,13 @@
 'use client'
 import React, { useState } from "react";
+import Image from "next/image";
+import HumanFormText from "./HumanFormText";
 import EnteredDiv from "./EnteredDiv";
 
-const InsideFull = '/assets/robotics-lab.jpg'
-const InsideMobile = '/assets/robotics-lab.jpg'
+const HumanoidMobile = '/assets/robotics-lab.jpg';
 
 function HumanForms() {
-  const delay = 900;
+  const delay = 600;
   const [s0, setS0] = useState(false);
   const [s1, setS1] = useState(false);
   const [s2, setS2] = useState(false);
@@ -21,7 +22,7 @@ function HumanForms() {
   const [labs, setLabs] = useState('AI');
   const [reach, setReach] = useState('FINTECH');
 
-  function countTo(target: number, setter: (n: number) => void, suffix = '') {
+  function countTo(target: number, setter: (n: number) => void) {
     const start = performance.now();
     function step(now: number) {
       const p = Math.min((now - start) / delay, 1);
@@ -57,88 +58,32 @@ function HumanForms() {
     }
   }
 
-  const statRowClass = "flex items-baseline justify-between gap-[2rem] py-[2rem] border-t border-[hsla(0,0%,5%,.18)] first:border-t-0";
-  const labelClass = "font-neue-haas text-[1.6rem] font-medium tracking-[0]";
-  const valueClass = "font-machina font-normal uppercase text-[3.4rem] tracking-[-0.01em] text-right";
-
   return (
-    <section
-      className="relative overflow-hidden"
-      style={{ background: 'var(--color-brand-cream, #f6f6ef)', padding: '16rem var(--content-padding) 0' }}
-    >
-      <div id="inside-the-unipod" className="absolute top-[-7.2rem] md:top-[-12.8rem]" />
-
-      {/* Grid: heading+desc left, stats right */}
-      <div className="relative z-[2] grid grid-cols-1 gap-[6rem] mx-auto max-w-[256rem] lg:grid-cols-[1fr_1fr]">
-
-        {/* Left: heading + description */}
-        <div className="flex flex-col gap-[3.2rem]">
-          <h1
-            className="font-machina font-normal uppercase m-0 leading-none tracking-[-0.01em] text-[4.6rem] md:text-[8.5rem]"
-            style={{ fontFeatureSettings: '"ss12" on' }}
-          >
-            Inside the<br />Unipod
-          </h1>
-          <p className="font-neue-haas text-[1.6rem] tracking-[-0.01em] m-0 leading-[1.5] max-w-[34rem]">
-            A multi-disciplinary innovation facility built for student founders — powered by UNDP and accredited by the University of Lagos.
-          </p>
+    <section className="relative pt-[8rem] px-[var(--content-padding)] pb-[2.5rem] bg-[#f6f6ef] md:pt-[16rem]">
+      <div id="introducing-figure-01" className="absolute top-[-7.2rem] md:top-[-12.8rem]"></div>
+      
+      <div className="relative z-[2] grid grid-cols-1 gap-[9rem] mx-auto max-w-[256rem] md:gap-0 lg:grid-cols-[minmax(0,.5fr)_minmax(0,.5fr)]">
+        <div className="flex flex-col gap-[2.4rem] w-full md:gap-[3.2rem]">
+            <h1 className="font-machina font-normal text-[4.2rem] leading-[1] tracking-[-0.01em] uppercase m-0 md:text-[8.5rem]" style={{ fontFeatureSettings: '"ss12" on' }}>Inside the<br />Unipod</h1>
+            <p className="font-neue-haas text-[1.4rem] leading-[1.5] tracking-[-0.01em] m-0 md:text-[1.6rem] max-w-[34rem]">A multi-disciplinary innovation facility built for student founders — powered by UNDP and accredited by the University of Lagos.</p>
         </div>
-
-        {/* Right: stats */}
-        <dl className="m-0 p-0 pt-[9rem]" style={{ fontFeatureSettings: '"ss12" on' }}>
-          <EnteredDiv threshold={0.4} whenDivIsentered={podsEntered} element={
-            <div className={statRowClass}>
-              <dt className={labelClass}>Pods across Africa</dt>
-              <dd className={valueClass}>{pods}</dd>
-            </div>
-          } />
-          <EnteredDiv threshold={0.4} whenDivIsentered={hubsEntered} element={
-            <div className={statRowClass}>
-              <dt className={labelClass}>Connected hubs</dt>
-              <dd className={valueClass}>{hubs}+</dd>
-            </div>
-          } />
-          <EnteredDiv threshold={0.4} whenDivIsentered={foundersEntered} element={
-            <div className={statRowClass}>
-              <dt className={labelClass}>Founders in residence</dt>
-              <dd className={valueClass}>{founders}</dd>
-            </div>
-          } />
-          <EnteredDiv threshold={0.4} whenDivIsentered={labsEntered} element={
-            <div className={statRowClass}>
-              <dt className={labelClass}>Core labs</dt>
-              <dd className={`${valueClass} transition-all duration-300`}>{labs}</dd>
-            </div>
-          } />
-          <EnteredDiv threshold={0.4} whenDivIsentered={sectorsEntered} element={
-            <div className={statRowClass}>
-              <dt className={labelClass}>Sectors</dt>
-              <dd className={valueClass}>{sectors}</dd>
-            </div>
-          } />
-          <EnteredDiv threshold={0.4} whenDivIsentered={reachEntered} element={
-            <div className={statRowClass}>
-              <dt className={labelClass}>Reach</dt>
-              <dd className={`${valueClass} text-[2.6rem] transition-all duration-300`}>{reach}</dd>
-            </div>
-          } />
+        <dl className="m-0 p-0 md:pt-[9rem]" >
+          <EnteredDiv element={<HumanFormText title={'Pods across Africa'} value={`${pods}`} blackText/>} threshold={0.5} whenDivIsentered={podsEntered} />
+          <EnteredDiv element={<HumanFormText title={'Connected hubs'} value={`${hubs}+`} blackText/>} threshold={0.5} whenDivIsentered={hubsEntered} />
+          <EnteredDiv element={<HumanFormText title={'Founders in residence'} value={`${founders}`}/>} threshold={0.5} whenDivIsentered={foundersEntered} />
+          <EnteredDiv element={<HumanFormText title={'Sectors'} value={`${sectors}`}/>} threshold={0.5} whenDivIsentered={sectorsEntered} />
+          <EnteredDiv element={<HumanFormText title={'Reach'} value={`${reach}`}/>} threshold={0.5} whenDivIsentered={reachEntered} />
+          <EnteredDiv element={<HumanFormText title={'Core labs'} value={`${labs}`}/>} threshold={0.5} whenDivIsentered={labsEntered} />
         </dl>
       </div>
-
-      {/* Full-bleed image */}
-      <div className="mt-[8rem]">
-        <picture>
-          <source srcSet={InsideFull} media="(min-width: 768px)" />
-          <img
-            className="w-full object-cover object-center"
-            style={{ height: '60vw', maxHeight: '80rem' }}
-            src={InsideMobile}
-            width="2000" height="1100"
-            alt="AI and robotics lab inside a Unipod"
-            loading="lazy"
-          />
-        </picture>
-      </div>
+      
+      <Image 
+        className="absolute bottom-0 left-0 max-w-[37.5rem] w-full h-[60rem] object-contain object-left-bottom z-[1] aspect-[800/1330] md:max-w-full md:h-[90%] md:object-bottom md:aspect-[1440/1169]" 
+        src={HumanoidMobile} 
+        width={800} 
+        height={1330} 
+        alt="Inside Unipod lab" 
+      />
     </section>
   )
 }

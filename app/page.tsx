@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Video from "../components/Video";
 import TextLoader from "../components/TextLoader";
 import ImageComponent from "../components/Image";
@@ -11,6 +11,8 @@ const loungeSunset = '/assets/lounge-sunset.jpg'
 const mezzanine = '/assets/mezzanine.jpg'
 
 function Home() {
+  const heroRef = useRef<HTMLDivElement>(null);
+
   // Reveal on scroll — mirrors site.js IntersectionObserver
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -25,18 +27,42 @@ function Home() {
       { threshold: 0.12 }
     );
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-    return () => io.disconnect();
+
+    // Logo reveal observer
+    const navIo = new IntersectionObserver(
+      (entries) => {
+        const nav = document.querySelector('.navigation');
+        if (!nav) return;
+        
+        entries.forEach(e => {
+          if (!e.isIntersecting) {
+            nav.classList.add('is-home-link-shown');
+          } else {
+            nav.classList.remove('is-home-link-shown');
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+    if (heroRef.current) navIo.observe(heroRef.current);
+
+    return () => {
+      io.disconnect();
+      navIo.disconnect();
+    };
   }, []);
 
   return (
     <main className="block">
       {/* Hero / video */}
-      <Video
-        videotobeshown="/unipod-hero.mp4"
-        slideText
-        heading="Unipod is the University of Lagos academic hub for innovation, design and robotics."
-        subtext="turning bold student ideas into ventures that move the continent forward"
-      />
+      <div ref={heroRef}>
+        <Video
+          videotobeshown="/unipod-hero.mp4"
+          slideText
+          heading="Unipod is the University of Lagos academic hub for innovation, design and robotics."
+          subtext="turning bold student ideas into ventures that move the continent forward"
+        />
+      </div>
 
       {/* Rotating text */}
       <TextLoader />

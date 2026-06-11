@@ -5,7 +5,7 @@ import useContextState from "../useContextState";
 
 interface SliderProps {
   news?: boolean;
-  text?: string;
+  text?: React.ReactNode;
   icon?: boolean;
   plus?: boolean;
   arrowUpRight?: boolean;

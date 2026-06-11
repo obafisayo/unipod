@@ -69,17 +69,17 @@ function MasterplanContent() {
 
   return (
     <div className="rich-text-page-content__content p-[0_var(--content-padding)_6rem] md:p-[0_var(--content-padding)_12rem]">
-      <div className="rich-text-page-content__content-inner w-full max-w-[256rem] mx-auto lg:grid lg:gap-[6rem] lg:grid-cols-[minmax(50rem,1fr)_minmax(0,45rem)] xl:gap-[14rem]">
+      <div className="rich-text-page-content__content-inner w-full max-w-1024 mx-auto lg:grid lg:gap-24 lg:grid-cols-[minmax(50rem,1fr)_minmax(0,45rem)] xl:gap-56">
         <div className="rich-text-page-content__article-author-container">
-          <article className="rich-text-page-content__rich-text-area whitespace-break-spaces [&>*:first-child]:mt-[6rem] md:[&>*:first-child]:mt-[9rem] lg:[&>*:first-child]:mt-[12rem]">
+          <article className="rich-text-page-content__rich-text-area whitespace-break-spaces [&>*:first-child]:mt-24 md:[&>*:first-child]:mt-36 lg:[&>*:first-child]:mt-48">
             <h2 className="rich-text-heading rich-text-heading--h2 relative font-neue-haas text-[2.4rem] font-normal leading-[1.1] tracking-[-0.01em] m-[6rem_0_2rem] md:text-[3.6rem] md:m-[12rem_0_3rem]">
-              <span id="our-mission" className="rich-text-heading-anchor absolute top-[-15rem] left-0"></span>
+              <span id="our-mission" className="rich-text-heading-anchor absolute -top-60 left-0"></span>
               Our Mission
             </h2>
             <p className="rich-text-paragraph font-neue-haas text-[1.7rem] font-normal leading-[160%] tracking-[-0.01em] md:text-[1.9rem]">Expand human capabilities through advanced AI.</p>
             
             <h2 className="rich-text-heading rich-text-heading--h2 relative font-neue-haas text-[2.4rem] font-normal leading-[1.1] tracking-[-0.01em] m-[6rem_0_2rem] md:text-[3.6rem] md:m-[12rem_0_3rem]">
-              <span id="the-company" className="rich-text-heading-anchor absolute top-[-15rem] left-0"></span>
+              <span id="the-company" className="rich-text-heading-anchor absolute -top-60 left-0"></span>
               The Company
             </h2>
             <p className="rich-text-paragraph font-neue-haas text-[1.7rem] font-normal leading-[160%] tracking-[-0.01em] md:text-[1.9rem]">I believe that positively affecting the future of humanity is the moral priority of our time. The most meaningful impact can come from dedicating our resources to developing technologies. In the coming age we will see great advancements in Artificial Intelligence (AI) and Robotics, and by contributing in the early stages, we can set the course for a positive AI future for humanity.</p>
@@ -87,13 +87,13 @@ function MasterplanContent() {
             <p className="rich-text-paragraph font-neue-haas text-[1.7rem] font-normal leading-[160%] tracking-[-0.01em] md:text-[1.9rem]">Our company journey will take decades — and require a championship team dedicated to the mission, billions of dollars invested, and engineering innovation in order to achieve a mass-market impact. We face high risk and extremely low chances of success. However, if we are successful, we have the potential to positively impact humanity and to build the largest company on the planet.</p>
             
             <h2 className="rich-text-heading rich-text-heading--h2 relative font-neue-haas text-[2.4rem] font-normal leading-[1.1] tracking-[-0.01em] m-[6rem_0_2rem] md:text-[3.6rem] md:m-[12rem_0_3rem]">
-              <span id="the-present" className="rich-text-heading-anchor absolute top-[-15rem] left-0"></span>
+              <span id="the-present" className="rich-text-heading-anchor absolute -top-60 left-0"></span>
               The Present
             </h2>
             <p className="rich-text-paragraph font-neue-haas text-[1.7rem] font-normal leading-[160%] tracking-[-0.01em] md:text-[1.9rem]">Today, we are seeing unprecedented labor shortages. There are over 10 million unsafe or undesirable jobs in the U.S. alone, and an aging population will only make it increasingly difficult for companies to scale their workforces. As a result, the labor supply growth is set to flatline this century. If we want continued growth, we need more productivity — and this means more automation.</p>
             
             <h2 className="rich-text-heading rich-text-heading--h2 relative font-neue-haas text-[2.4rem] font-normal leading-[1.1] tracking-[-0.01em] m-[6rem_0_2rem] md:text-[3.6rem] md:m-[12rem_0_3rem]">
-              <span id="the-possibility" className="rich-text-heading-anchor absolute top-[-15rem] left-0"></span>
+              <span id="the-possibility" className="rich-text-heading-anchor absolute -top-60 left-0"></span>
               The Possibility
             </h2>
             <p className="rich-text-paragraph font-neue-haas text-[1.7rem] font-normal leading-[160%] tracking-[-0.01em] md:text-[1.9rem]">Thankfully, we are in the early stages of an AI and Robotics revolution. This presents the unique opportunity to substantially increase our production and standard of living.</p>
@@ -106,13 +106,13 @@ function MasterplanContent() {
             </div>
             
             <h2 className="rich-text-heading rich-text-heading--h2 relative font-neue-haas text-[2.4rem] font-normal leading-[1.1] tracking-[-0.01em] m-[6rem_0_2rem] md:text-[3.6rem] md:m-[12rem_0_3rem]">
-              <span id="the-solution" className="rich-text-heading-anchor absolute top-[-15rem] left-0"></span>
+              <span id="the-solution" className="rich-text-heading-anchor absolute -top-60 left-0"></span>
               The Solution
             </h2>
             <p className="rich-text-paragraph font-neue-haas text-[1.7rem] font-normal leading-[160%] tracking-[-0.01em] md:text-[1.9rem]">There are two schools of thought on how to solve real-world robotics: build an environment specifically for robots, or reverse it and build robots for our human environment. We could have either millions of different types of robots serving unique tasks or one humanoid robot with a general interface, serving millions of tasks. At Unipod, we believe general purpose humanoid robots built for a human environment is the desired route to have the largest overall impact. For that reason, our humanoid robots resemble the human body in shape — two legs, two arms, hands, and screen for a face. With one product we can meet the complex human environment with human-like capabilities, and provide endless types of support across a variety of circumstances.</p>
             
             <h2 className="rich-text-heading rich-text-heading--h2 relative font-neue-haas text-[2.4rem] font-normal leading-[1.1] tracking-[-0.01em] m-[6rem_0_2rem] md:text-[3.6rem] md:m-[12rem_0_3rem]">
-              <span id="how-we-can-do-it" className="rich-text-heading-anchor absolute top-[-15rem] left-0"></span>
+              <span id="how-we-can-do-it" className="rich-text-heading-anchor absolute -top-60 left-0"></span>
               How We Can Do It
             </h2>
             <p className="rich-text-paragraph font-neue-haas text-[1.7rem] font-normal leading-[160%] tracking-[-0.01em] md:text-[1.9rem]">In 20 years of studying and building companies, I&apos;ve never seen a potential market size similar to what general purpose humanoids can bring. Arriving there will require significant advancements in technology. Today, even everyday tasks, such as unloading the dishwasher, are still incredibly challenging for robots. We&apos;re heads-down and focused on making substantive leaps in those areas of advancement. They include:</p>
@@ -146,7 +146,7 @@ function MasterplanContent() {
             </ul>
             
             <h2 className="rich-text-heading rich-text-heading--h2 relative font-neue-haas text-[2.4rem] font-normal leading-[1.1] tracking-[-0.01em] m-[6rem_0_2rem] md:text-[3.6rem] md:m-[12rem_0_3rem]">
-              <span id="conclusion" className="rich-text-heading-anchor absolute top-[-15rem] left-0"></span>
+              <span id="conclusion" className="rich-text-heading-anchor absolute -top-60 left-0"></span>
               Conclusion
             </h2>
             <p className="rich-text-paragraph font-neue-haas text-[1.7rem] font-normal leading-[160%] tracking-[-0.01em] md:text-[1.9rem]">In summary here is the first phase of our Master Plan:</p>
@@ -166,7 +166,7 @@ function MasterplanContent() {
           </article>
           <Author />
         </div>
-        <div className="rich-text-page-content__side-nav-container transition-opacity duration-300 ease-in-out z-[250] fixed top-[1.5rem] w-[calc(100%-14rem)] left-[7rem] md:w-[28rem] md:top-[4rem] md:left-auto md:right-[4rem] lg:w-full lg:sticky lg:h-max lg:right-auto lg:top-[2.5rem] lg:mt-[10rem]">
+        <div className="rich-text-page-content__side-nav-container transition-opacity duration-300 ease-in-out z-250 fixed top-6 w-[calc(100%-14rem)] left-28 md:w-md md:top-16 md:left-auto md:right-16 lg:w-full lg:sticky lg:h-max lg:right-auto lg:top-10 lg:mt-40">
           <nav className="side-navigation rich-text-page-content__side-nav hidden lg:block">
             <MasterplanNavItem no={'01'} activeness={divStates[0]} text={'Our Mission'} href={'/master-plan#our-mission'} title={'Our Mission'} />
             <MasterplanNavItem no={'02'} activeness={divStates[1]} text={'The Company'} href={'/master-plan#the-company'} title={'The Company'} />
@@ -177,7 +177,7 @@ function MasterplanContent() {
             <MasterplanNavItem no={'07'} activeness={divStates[6]} text={'Conclusion'} href={'/master-plan#conclusion'} title={'Conclusion'} />
           </nav>
           <div className="custom-select side-navigation__select relative bg-white shadow-[0_0.4rem_2rem_hsla(0,0%,5%,.08)] rounded-[0.3rem] overflow-hidden block lg:hidden">
-            <select className="custom-select__el font-machina text-[1.4rem] font-medium leading-[4.2rem] tracking-[0] uppercase bg-white h-[4.2rem] w-full border-none p-[0_5rem_0_1rem] appearance-none text-[#0c0c0c] md:h-[3.6rem] md:leading-[3.6rem]" ref={customselectel}>
+            <select title="Section navigation" aria-label="Section navigation" className="custom-select__el font-machina text-[1.4rem] font-medium leading-[4.2rem] tracking-normal uppercase bg-white h-[4.2rem] w-full border-none p-[0_5rem_0_1rem] appearance-none text-brand-dark md:h-[3.6rem] md:leading-[3.6rem]" ref={customselectel}>
               <option value="our-mission">01 Our Mission</option>
               <option value="the-company">02 The Company</option>
               <option value="the-present">03 The Present</option>
@@ -186,7 +186,7 @@ function MasterplanContent() {
               <option value="how-we-can-do-it">06 How We Can Do It</option>
               <option value="conclusion">07 Conclusion</option>
             </select>
-            <svg viewBox="0 0 14 8" width="12" height="6" fill="none" xmlns="http://www.w3.org/2000/svg" className="custom-select__caret absolute top-1/2 right-[2rem] -translate-y-1/2 pointer-events-none w-[1.2rem]">
+            <svg viewBox="0 0 14 8" width="12" height="6" fill="none" xmlns="http://www.w3.org/2000/svg" className="custom-select__caret absolute top-1/2 right-8 -translate-y-1/2 pointer-events-none w-[1.2rem]">
               <path d="M1 0.5L7 6.5L13 0.5" stroke="currentColor"></path>
             </svg>
           </div>

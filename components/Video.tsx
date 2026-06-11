@@ -113,14 +113,14 @@ function Video({
   };
 
   const whichPicture = career ? figureHr1 : figureMaster1;
-  const contentClass = `relative mx-auto bg-[#0c0c0c] w-full min-h-[60rem] max-w-[256rem] flex flex-col overflow-hidden aspect-[1500/3248] min-[480px]:aspect-[3840/2160] pt-[8.2rem] px-[var(--content-padding)] pb-0 md:pt-[11.6rem] md:pb-[5rem] md:flex-row md:justify-between ${career ? "hero--layout-2" : ""}`;
+  const contentClass = `relative mx-auto bg-[#0c0c0c] w-full min-h-[60rem] max-w-1024 flex flex-col overflow-hidden aspect-[1500/3248] min-[480px]:aspect-[3840/2160] pt-[8.2rem] px-[var(--content-padding)] pb-0 md:pt-[11.6rem] md:pb-[5rem] md:flex-row md:justify-between ${career ? "hero--layout-2" : ""}`;
 
   return (
     <section className="block">
       <div className={contentClass}>
         {/* ── top gradient vignette ── */}
         <div
-          className={`absolute right-0 left-0 block w-full h-[46rem] opacity-60 z-[5] pointer-events-none ${
+          className={`absolute right-0 left-0 block w-full h-184 opacity-60 z-5 pointer-events-none ${
             career
               ? "top-0 bg-[linear-gradient(180deg,#000_14%,transparent_88%)]"
               : "bottom-0 bg-[linear-gradient(0deg,#000_24%,transparent_72%)]"
@@ -129,7 +129,7 @@ function Video({
 
         {/* ── poster image — z-index 4 keeps it above video (z-index 3) until play ── */}
         {showPicture && (
-          <picture className="absolute top-0 right-0 bottom-0 left-0 z-[4] block">
+          <picture className="absolute top-0 right-0 bottom-0 left-0 z-4 block">
             <source srcSet={figureMaster1} media="(min-width: 768px)" />
             <img
               src={whichPicture}
@@ -152,14 +152,14 @@ function Video({
           playsInline
           preload="none"
           aria-label={heading}
-          className="absolute top-0 right-0 bottom-0 left-0 object-center object-cover w-full h-full z-[3]"
+          className="absolute top-0 right-0 bottom-0 left-0 object-center object-cover w-full h-full z-3"
         />
 
         {/* ── left column: heading + play button row ── */}
         <div
           className={`relative flex flex-col w-full z-10 justify-end md:gap-[3.4rem] ${
             career
-              ? "gap-[1.4rem] max-w-[61rem] h-full justify-between"
+              ? "gap-[1.4rem] max-w-244 h-full justify-between"
               : "gap-[1.4rem] max-w-[54.4rem]"
           }`}
         >
@@ -172,7 +172,7 @@ function Video({
                 {heading}
               </h1>
               {button && (
-                <a href="/careers#careers-listing">
+                <a href="/careers#careers-listing" title="Careers listing">
                   <Button text="See all open roles" arrowdown />
                 </a>
               )}
@@ -193,7 +193,7 @@ function Video({
 
           {/* ── play / pause controls ── */}
           <div
-            className={`flex items-center gap-[1rem] md:gap-[2.8rem] ${career ? "mb-[2rem] md:mb-0" : ""}`}
+            className={`flex items-center gap-4 md:gap-[2.8rem] ${career ? "mb-8 md:mb-0" : ""}`}
           >
             {/* The button — receives is-playing / is-hovering classes */}
             <button
@@ -448,7 +448,7 @@ function Video({
             {slideText && (
               <a
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
                 href="https://www.undp.org/africa/timbuktoo"
                 className="no-underline"
               >
@@ -468,7 +468,7 @@ function Video({
 
         {/* ── right column: newsletter ── */}
         <div
-          className={`flex flex-col py-[2.4rem] px-[2rem] bg-[hsla(0,0%,5%,.4)] z-10 -ml-[var(--content-padding)] w-[calc(100%+var(--content-padding)*2)] mt-auto md:ml-0 md:max-w-[43rem] md:mb-0 md:self-end md:rounded-[.8rem] md:w-auto md:p-[2.4rem] md:gap-[.4rem] ${career ? "max-md:bg-[#0c0c0c]" : ""}`}
+          className={`flex flex-col py-[2.4rem] px-8 bg-[hsla(0,0%,5%,.4)] z-10 -ml-(--content-padding) w-[calc(100%+var(--content-padding)*2)] mt-auto md:ml-0 md:max-w-172 md:mb-0 md:self-end md:rounded-[.8rem] md:w-auto md:p-[2.4rem] md:gap-[.4rem] ${career ? "max-md:bg-brand-dark" : ""}`}
         >
           <NewsletterMail
             background="hsla(0,0%,5%,.4)"

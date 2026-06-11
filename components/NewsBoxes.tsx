@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from "react";
+import Slider from "./Slider";
 
 interface NewsBoxesProps {
   href: string;
@@ -8,46 +9,60 @@ interface NewsBoxesProps {
 }
 
 function NewsBoxes({ href, text, text2 }: NewsBoxesProps) {
-  const [hover, setHover] = useState(false)
+  const [hover, setHover] = useState(false);
 
   return (
     <a
       href={href}
-      title="Read article"
+      title="Read Now"
       target="_blank"
       rel="noreferrer"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      className="reveal flex flex-col justify-between no-underline text-white rounded-[0.6rem] transition-all duration-300"
-      style={{
-        minHeight: '34rem',
-        padding: '2.4rem',
-        border: '0.1rem solid rgba(255,255,255,.18)',
-        transform: hover ? 'translateY(-0.4rem)' : 'translateY(0)',
-        background: hover ? 'rgba(255,255,255,.04)' : 'transparent',
-        borderColor: hover ? 'rgba(255,255,255,.4)' : 'rgba(255,255,255,.18)',
-      }}
+      className="group relative block text-white p-[2.6rem_3.2rem] min-h-[22.2rem] h-full no-underline md:min-h-[31.4rem]"
     >
-      {/* Source label */}
-      <span
-        className="font-machina uppercase text-[1.3rem] tracking-[0.02em]"
-        style={{ color: 'rgba(255,255,255,.55)' }}
-      >
-        {text2}
-      </span>
+      {/* Background elements */}
+      <div 
+        className="absolute top-0 left-0 w-full h-full rounded-[0.5rem] z-[2]" 
+        style={{ background: 'linear-gradient(180deg,#ff38bb 5%,#ff8038 55%,#f5be66 65%,#f1fff7 93%)' }} 
+      />
+      
+      <div 
+        className="absolute top-0 left-0 w-full h-full rounded-[0.5rem] z-[3] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+        style={{ 
+          border: '0.2rem solid',
+          borderImageSource: 'linear-gradient(180deg,#ff38bb 5%,#ff8038 55%,#f5be66 65%,#f1fff7 93%)',
+          borderImageSlice: 1,
+          filter: 'blur(0.6rem)',
+          transform: 'translateZ(0)'
+        }}
+      />
+      
+      <div className="absolute top-[0.1rem] left-[0.1rem] w-[calc(100%-0.2rem)] h-[calc(100%-0.2rem)] bg-[#0c0c0c] rounded-[0.5rem] z-[2]" />
 
-      {/* Headline */}
-      <span className="text-[2rem] leading-[1.25] tracking-[-0.01em] mt-auto block">
-        {text}
-      </span>
-
-      {/* Arrow */}
-      <span className="mt-[2.4rem] block">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-          <path d="M5 17L17 5M17 5H7M17 5v10" stroke="currentColor" strokeWidth="1.4" />
-        </svg>
-      </span>
+      <article className="relative h-full flex flex-col items-start justify-start text-left z-[4]">
+        <div className="relative mb-[7rem]">
+          <span className="block text-white font-neue-haas text-[1.4rem] font-medium leading-[1.2] tracking-0 mb-[2.3rem] md:mb-[3.2rem]">
+            {text2}
+          </span>
+          <h1 
+            className="inline text-white font-neue-haas text-[1.8rem] font-normal leading-[1.5] tracking-[-0.01em] normal-case transition-all duration-300 ease-in-out md:text-[2.2rem] md:leading-[1.1]"
+            style={{
+              background: 'linear-gradient(90deg,hsla(0,0%,100%,0),hsla(0,0%,100%,0)),linear-gradient(90deg,#fff,#fff)',
+              backgroundSize: hover ? '0 0.1rem,100% 0.1rem' : '100% 0.1rem,0 0.1rem',
+              backgroundPosition: '100% 100%,0 100%',
+              backgroundRepeat: 'no-repeat'
+            }}
+          >
+            {text}
+          </h1>
+        </div>
+        <div className="relative mt-auto w-full flex items-center justify-end">
+          <Slider news={hover} icon arrowUpRight text={"Read Now"} light hovered={hover} slide bordercolor={'white'} fw={"600"} />
+        </div>
+      </article>
     </a>
-  )
+  );
 }
+
 export default NewsBoxes;

@@ -126,7 +126,7 @@ function CultureContent() {
             <MasterplanNavItem no={'05'} activeness={divStates[4]} text={'Conclusion'} href={'/culture#conclusion'} title={'Conclusion'} />
           </nav>
           <div className="custom-select side-navigation__select relative bg-white shadow-[0_0.4rem_2rem_hsla(0,0%,5%,.08)] rounded-[0.3rem] overflow-hidden block lg:hidden">
-            <select className="custom-select__el font-machina text-[1.4rem] font-medium leading-[4.2rem] tracking-[0] uppercase bg-white h-[4.2rem] w-full border-none p-[0_5rem_0_1rem] appearance-none text-[#0c0c0c] md:h-[3.6rem] md:leading-[3.6rem]" ref={customselectel}>
+            <select title="Section navigation" aria-label="Section navigation" className="custom-select__el font-machina text-[1.4rem] font-medium leading-[4.2rem] tracking-[0] uppercase bg-white h-[4.2rem] w-full border-none p-[0_5rem_0_1rem] appearance-none text-[#0c0c0c] md:h-[3.6rem] md:leading-[3.6rem]" ref={customselectel}>
               <option value="origin">01 Origin</option>
               <option value="mission">02 Mission</option>
               <option value="vision">03 Vision</option>

@@ -39,8 +39,8 @@ function ContactModal() {
             <Button width={'100%'} text={'Submit'} className="w-full" />
             <p className="leading-[0] text-transparent text-[0] text-center m-0" aria-live="polite"></p>
             <p className="font-neue-haas text-[1.4rem] leading-[1.5] tracking-[-0.01em] text-[hsla(0,0%,5%,.6)] text-center m-0">
-              This site is protected by reCAPTCHA and the Google <a className="underline text-[hsla(0,0%,5%,.6)]" target="_blank" rel="noreferrer" href="https://policies.google.com/privacy">Privacy Policy</a> and
-              <a className="underline text-[hsla(0,0%,5%,.6)]" target="_blank" rel="noreferrer" href="https://policies.google.com/terms"> Terms of Service</a> apply.
+              This site is protected by reCAPTCHA and the Google <a className="underline text-[hsla(0,0%,5%,.6)]" target="_blank" rel="noreferrer noopener" href="https://policies.google.com/privacy">Privacy Policy</a> and
+              <a className="underline text-[hsla(0,0%,5%,.6)]" target="_blank" rel="noreferrer noopener" href="https://policies.google.com/terms"> Terms of Service</a> apply.
             </p>
           </form>
         </div>

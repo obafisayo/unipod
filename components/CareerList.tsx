@@ -6,7 +6,7 @@ import CareerListH from "./CareersListH";
 
 function CareerList() {
   return (
-    <section className="p-[8rem_var(--content-padding)] md:p-[16rem_var(--content-padding)]" style={{ background: 'var(--section-dark, #0c0c0c)' }}>
+    <section className="p-[8rem_var(--content-padding)] md:p-[16rem_var(--content-padding)] bg-brand-dark">
       <section className="relative overflow-hidden text-white">
         <div id="careers-listing"></div>
         <div className="w-full max-w-[256rem] mx-auto grid grid-cols-1 gap-[6rem] lg:gap-[9rem] lg:grid-cols-[22rem_1fr]">
@@ -20,7 +20,7 @@ function CareerList() {
               <li className="m-0">
                 <article className="border-t border-solid border-[hsla(0,0%,100%,.8)] w-full">
                   <CareerListH head={"AI"} sup={'05'} />
-                  <div id="careers-listing-module-item-ai" className="transition-[height] duration-300 ease-in-out overflow-hidden" style={{ height: "auto" }}>
+                  <div id="careers-listing-module-item-ai" className="transition-[height] duration-300 ease-in-out overflow-hidden h-auto">
                     <div className="pb-[5rem]">
                       <CareerListA href={"https://boards.greenhouse.io/figureai/jobs/4031371006"} text={'Humanoid Robot Operator Interface Engineer'} />
                       <CareerListA href={"https://boards.greenhouse.io/figureai/jobs/4007375006"} text={'Perception / Computer Vision Software Engineer'} />
@@ -34,7 +34,7 @@ function CareerList() {
               <li className="m-0">
                 <article className="border-t border-solid border-[hsla(0,0%,100%,.8)] w-full">
                   <CareerListH head={"CONTROLS"} sup={'02'} />
-                  <div id="careers-listing-module-item-controls" className="transition-[height] duration-300 ease-in-out overflow-hidden" style={{ height: "auto" }}>
+                  <div id="careers-listing-module-item-controls" className="transition-[height] duration-300 ease-in-out overflow-hidden h-auto">
                     <div className="pb-[5rem]">
                       <CareerListA href={"https://boards.greenhouse.io/figureai/jobs/4050903006"} text={'Actuator Controls Engineer'} />
                       <CareerListA href={"https://boards.greenhouse.io/figureai/jobs/4007360006"} text={'Senior Robotics Controls Engineer'} />
@@ -45,7 +45,7 @@ function CareerList() {
               <li className="m-0">
                 <article className="border-t border-solid border-[hsla(0,0%,100%,.8)] w-full">
                   <CareerListH head={"HARDWARE"} sup={'02'} />
-                  <div id="careers-listing-module-item-hardware" className="transition-[height] duration-300 ease-in-out overflow-hidden" style={{ height: "auto" }}>
+                  <div id="careers-listing-module-item-hardware" className="transition-[height] duration-300 ease-in-out overflow-hidden h-auto">
                     <div className="pb-[5rem]">
                       <CareerListA href={"https://boards.greenhouse.io/figureai/jobs/4052819006"} text={'Electrical Distribution - Harness Engineer'} />
                       <CareerListA href={"https://boards.greenhouse.io/figureai/jobs/4006348006"} text={'Senior Mechanical Engineer'} />
@@ -56,7 +56,7 @@ function CareerList() {
               <li className="m-0">
                 <article className="border-t border-solid border-[hsla(0,0%,100%,.8)] w-full">
                   <CareerListH head={"HUMANOID MANAGEMENT SYSTEM"} sup={'05'} />
-                  <div id="careers-listing-module-item-hms" className="transition-[height] duration-300 ease-in-out overflow-hidden" style={{ height: "auto" }}>
+                  <div id="careers-listing-module-item-hms" className="transition-[height] duration-300 ease-in-out overflow-hidden h-auto">
                     <div className="pb-[5rem]">
                       <CareerListA href={"https://boards.greenhouse.io/figureai/jobs/4006355006"} text={'Electrical Engineer'} />
                       <CareerListA href={"https://boards.greenhouse.io/figureai/jobs/4032252006"} text={'Electrical Engineer Intern'} />
@@ -70,7 +70,7 @@ function CareerList() {
               <li className="m-0">
                 <article className="border-t border-b border-solid border-[hsla(0,0%,100%,.8)] w-full">
                   <CareerListH head={"SYSTEMS INTEGRATION & TEST"} sup={'04'} />
-                  <div id="careers-listing-module-item-sit" className="transition-[height] duration-300 ease-in-out overflow-hidden" style={{ height: "auto" }}>
+                  <div id="careers-listing-module-item-sit" className="transition-[height] duration-300 ease-in-out overflow-hidden h-auto">
                     <div className="pb-[5rem]">
                       <CareerListA href={"https://boards.greenhouse.io/figureai/jobs/4018394006"} text={'Electrical Integration Technician'} />
                       <CareerListA href={"https://boards.greenhouse.io/figureai/jobs/4018373006"} text={'Mechanical R&D Technician'} />

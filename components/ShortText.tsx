@@ -1,6 +1,6 @@
 'use client'
 import React from "react"
-import Link from "next/link"
+import Button from "./Button"
 
 interface ShortTextProps {
   header?: string;
@@ -16,83 +16,84 @@ interface ShortTextProps {
   ppeff?: boolean;
 }
 
-function ShortText({ header, paragraph, to, bt, paragraph2, kicker, bcc, color, ppeff }: ShortTextProps) {
-  const bg = bcc || '#ffffff';
-  const padding = ppeff
-    ? '16rem var(--content-padding)'
-    : '12rem var(--content-padding) 16rem';
+function ShortText({ header, paragraph, to, bt, paragraph2, kicker, bcc, nomargin, color, headerfsz, ppeff }: ShortTextProps) {
+  const bg = bcc || 'white';
+  const textColor = color || '#0c0c0c';
 
   return (
     <section
-      className="relative"
-      style={{ background: bg, color: color || '#0c0c0c', padding }}
+      className={`relative ${nomargin ? 'px-[var(--content-padding)] md:px-[var(--content-padding)]' : 'pt-[4rem] px-[var(--content-padding)] pb-[8rem] md:pt-[12rem] md:pb-[16rem]'} ${ppeff ? 'md:pt-[16rem]' : ''} ${!ppeff ? 'lg:pr-[8rem]' : ''}`}
+      style={{ backgroundColor: bg, color: textColor }}
     >
-      {/* Inline style for the responsive grid template */}
       <style>{`
-        .cta-grid {
-          display: grid;
-          grid-template-columns: 1fr;
+        .cta-content {
+          display: flex;
+          flex-direction: column;
           gap: 2rem;
           margin: 0 auto;
           width: 100%;
           max-width: 256rem;
         }
+        .cta-heading {
+          font-size: ${headerfsz ? '4.2rem' : '2.4rem'};
+        }
         @media screen and (min-width: 768px) {
-          .cta-grid {
+          .cta-content {
+            display: grid;
+            grid-template: 
+                "heading description" auto
+                "cta description" ${ppeff ? '2fr / 2fr 1.2fr' : '1fr / 1fr 1fr'};
+            grid-gap: 3rem;
             gap: 3rem;
-            grid-template: "heading description" auto "cta description" 1fr / 1fr 1fr;
           }
-          .cta-grid .cta-heading { grid-area: heading; }
-          .cta-grid .cta-desc    { grid-area: description; }
-          .cta-grid .cta-btn     { grid-area: cta; }
+          .cta-heading {
+            font-size: ${headerfsz || '3.6rem'};
+          }
         }
       `}</style>
-
-      <div className="reveal cta-grid">
-        {/* Heading + optional kicker */}
-        <div className="cta-heading" style={{ maxWidth: '57rem' }}>
-          {kicker && (
-            <div
-              className={`text-[1.4rem] font-medium tracking-[0] mb-[2rem] ${ppeff ? 'font-machina uppercase' : 'font-neue-haas'}`}
+      <div className="reveal cta">
+        <div id="were-engineering-the-humanoid-to-make-humans-capable-of-more" className="absolute top-[-7.2rem] md:top-[-12.8rem]"></div>
+        <div className="cta-content">
+          <div 
+            className={`flex flex-col w-full ${nomargin ? 'gap-0 md:gap-0' : 'gap-[2rem] md:gap-0'}`} 
+            style={{ maxWidth: ppeff ? '70.2rem' : '57.2rem', gridArea: 'heading' }}
+          >
+            {kicker && (
+              <div className={`leading-[1.2] text-[1.4rem] font-medium tracking-[0] ${ppeff ? 'font-machina uppercase' : 'font-neue-haas'}`}>
+                {kicker}
+              </div>
+            )}
+            {header && (
+              <h1 className={`cta-heading m-0 font-normal tracking-[-0.01em] ${headerfsz ? 'leading-[1]' : 'leading-[1.1]'} ${ppeff ? 'font-machina uppercase' : 'font-neue-haas'}`}>
+                {header}
+              </h1>
+            )}
+          </div>
+          
+          {(paragraph || paragraph2) && (
+            <div 
+              className={`flex flex-col gap-[2rem] md:justify-end ${paragraph2 ? 'md:flex-col md:gap-[20px]' : ''}`} 
+              style={{ gridArea: 'description' }}
             >
-              {kicker}
+              {paragraph && (
+                <p className={`m-0 w-full whitespace-pre-line font-neue-haas font-normal text-[1.4rem] leading-[2.1rem] md:text-[1.6rem] md:leading-[2.4rem] max-w-[45.2rem] ${ppeff ? 'lg:max-w-full' : ''}`} style={{ color: textColor }}>
+                  {paragraph}
+                </p>
+              )}
+              {paragraph2 && (
+                <p className={`m-0 w-full whitespace-pre-line font-neue-haas font-normal text-[1.4rem] leading-[2.1rem] md:text-[1.6rem] md:leading-[2.4rem] max-w-[45.2rem] ${ppeff ? 'lg:max-w-full' : ''}`} style={{ color: textColor }}>
+                  {paragraph2}
+                </p>
+              )}
             </div>
           )}
-          <h2
-            className="m-0 font-neue-haas font-normal tracking-[-0.01em] leading-[1.1] text-[2.6rem] md:text-[3.6rem]"
-          >
-            {header}
-          </h2>
-        </div>
-
-        {/* Description */}
-        <div className="cta-desc flex flex-col gap-[2rem] md:justify-end">
-          {paragraph && (
-            <p className="m-0 font-neue-haas text-[1.6rem] leading-[1.5] max-w-[46rem]" style={{ color: color || '#0c0c0c' }}>
-              {paragraph}
-            </p>
-          )}
-          {paragraph2 && (
-            <p className="m-0 font-neue-haas text-[1.6rem] leading-[1.5] max-w-[46rem]" style={{ color: color || '#0c0c0c' }}>
-              {paragraph2}
-            </p>
+          
+          {bt && to && (
+            <div style={{ gridArea: 'cta' }}>
+              <Button link to={to} text={bt} />
+            </div>
           )}
         </div>
-
-        {/* CTA button */}
-        {bt && to && (
-          <div className="cta-btn">
-            <Link
-              href={to}
-              className="inline-flex justify-center items-center px-[3rem] h-[4.8rem] no-underline font-neue-haas text-[1.4rem] font-medium text-[#0c0c0c] rounded-[2.4rem] border-none cursor-pointer transition-[background] duration-300"
-              style={{ background: '#797af2' }}
-              onMouseEnter={e => (e.currentTarget.style.background = '#c9c3de')}
-              onMouseLeave={e => (e.currentTarget.style.background = '#797af2')}
-            >
-              {bt}
-            </Link>
-          </div>
-        )}
       </div>
     </section>
   )
