@@ -13,7 +13,7 @@ function TextGradient({ text, ntext, gtext, activeness, modifiedAt }: TextGradie
   return (
     <div className="w-full grid [grid-template-areas:'a']">
       {activeness && (
-        <h1 className="[grid-area:a] leading-[1] font-machina text-[4.2rem] md:text-[8.5rem] font-normal tracking-[-0.01em] uppercase m-0 max-w-[111rem]" style={{ fontFeatureSettings: '"ss12" on' }}>
+        <h1 className="[grid-area:a] leading-none font-machina text-[4.2rem] md:text-[8.5rem] font-normal tracking-[-0.01em] uppercase m-0 max-w-[111rem] font-features-['ss12'_on]" >
           <span className="rotating-text-module__text-prefix">{text}</span>
           <span className="inline transition-opacity duration-300 ease-in-out opacity-100">
             <span>
@@ -24,7 +24,7 @@ function TextGradient({ text, ntext, gtext, activeness, modifiedAt }: TextGradie
           </span>
         </h1>
       )}
-      <div className="leading-[1.2] font-neue-haas text-[1.4rem] font-medium tracking-[0] my-[3rem] md:my-[4rem] mb-[6rem]">{modifiedAt}</div>
+      <div className="leading-[1.2] font-neue-haas text-[1.4rem] font-medium tracking-normal my-[3rem] md:my-[4rem] mb-[6rem]">{modifiedAt}</div>
     </div>
   )
 }

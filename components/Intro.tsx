@@ -13,13 +13,13 @@ interface IntroProps {
 
 function Intro({ name, ntext, gtext, descriptionlink }: IntroProps) {
   return (
-    <div className="rich-text-page-content__intro w-full max-w-[256rem] mx-auto bg-[#0c0c0c] p-[9rem_var(--content-padding)_6rem] text-white md:p-[14rem_var(--content-padding)_9rem] lg:p-[14rem_var(--content-padding)_12rem]">
+    <div className="rich-text-page-content__intro w-full max-w-1024 mx-auto bg-brand-dark p-[9rem_var(--content-padding)_6rem] text-white md:p-[14rem_var(--content-padding)_9rem] lg:p-[14rem_var(--content-padding)_12rem]">
       <div className="rich-text-page-content__intro-inner w-full max-w-[92rem]">
-        <div className="rich-text-page-content__kicker font-neue-haas text-[1.4rem] font-medium leading-[1.2] tracking-[0]">{name}</div>
-        <h1 className="rich-text-page-content__heading font-machina text-[4.2rem] font-normal leading-[1] tracking-[-0.01em] uppercase m-[4rem_0] md:text-[6rem] xl:text-[8.5rem]" style={{ fontFeatureSettings: '"ss12" on' }}>
-          <span className="gradient-rich-text__heading-text">{ntext}<strong className="gradient-rich-text__gradient-text font-normal text-transparent bg-clip-text [-webkit-background-clip:text]" style={{ background: 'linear-gradient(270deg,#ff38bb 4.25%,#ff8038 51.61%,#f5be66 80.43%,#f4dca8 93.03%)', backgroundClip: 'text', WebkitBackgroundClip: 'text' }}>{gtext}</strong></span>
+        <div className="rich-text-page-content__kicker font-neue-haas text-[1.4rem] font-medium leading-[1.2] tracking-normal">{name}</div>
+        <h1 className="rich-text-page-content__heading font-machina text-[4.2rem] font-normal leading-none tracking-[-0.01em] uppercase m-[4rem_0] md:text-[6rem] xl:text-[8.5rem] font-features-['ss12'_on]" >
+          <span className="gradient-rich-text__heading-text">{ntext}<strong className="gradient-rich-text__gradient-text font-normal text-transparent bg-clip-text [-webkit-background-clip:text] bg-[linear-gradient(270deg,#ff38bb_4.25%,#ff8038_51.61%,#f5be66_80.43%,#f4dca8_93.03%)] bg-clip-text" >{gtext}</strong></span>
         </h1>
-        <div className="rich-text-page-content__meta-info font-neue-haas text-[1.4rem] font-medium leading-[1.2] tracking-[0] mb-[3rem]">
+        <div className="rich-text-page-content__meta-info font-neue-haas text-[1.4rem] font-medium leading-[1.2] tracking-normal mb-[3rem]">
           <address className="rich-text-page-content__meta-info-author not-italic inline after:content-['•'] after:inline-block after:m-[0_1rem]">By: Brett Adcock, Founder & CEO</address>
           <time dateTime="2022-05-20T00:00:00.000Z" className="rich-text-page-content__meta-info-published">May 20, 2022</time>
         </div>

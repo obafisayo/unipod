@@ -18,29 +18,29 @@ interface NewsletterMailProps {
 function NewsletterMail({ background, icon, paddingLeft, fsz, width, color, newsletterHeading, medianewsletterHeading, newsletterDes }: NewsletterMailProps) {
   return (
     <section
-      className="relative z-[2] pt-[15px] pb-[10px] w-full"
+      className="relative z-2 pt-[15px] pb-[10px] w-[var(--nl-w)] pl-[var(--nl-pl)] text-[color:var(--nl-color)]"
       style={{
-        width: width || '100%',
-        paddingLeft: paddingLeft || '20px',
-        color: color || 'black'
-      }}
+        '--nl-w': width || '100%',
+        '--nl-pl': paddingLeft || '20px',
+        '--nl-color': color || 'black'
+      } as React.CSSProperties}
     >
       <div
-        className="absolute z-[-1] top-0 left-0 w-full h-full opacity-30 rounded-[5px]"
-        style={{ backgroundColor: background || 'gray' }}
+        className="absolute z-[-1] top-0 left-0 w-full h-full opacity-30 rounded-[5px] bg-[var(--nl-bg)]"
+        style={{ '--nl-bg': background || 'gray' } as React.CSSProperties}
       />
       <h1
-        className="font-neue-haas font-normal tracking-[-0.01em] m-0 mb-[0.8rem] leading-[1.5] md:leading-[1.1]"
+        className="font-neue-haas font-normal tracking-[-0.01em] m-0 mb-[0.8rem] leading-normal md:leading-[1.1] text-[length:var(--nl-heading)]"
         style={{
-          fontSize: newsletterHeading || '1.9rem',
-        }}
+          '--nl-heading': newsletterHeading || '1.9rem',
+        } as React.CSSProperties}
       >
         <style dangerouslySetInnerHTML={{ __html: `@media screen and (min-width: 768px) { .nl-heading-dyn { font-size: ${medianewsletterHeading || '2.2rem'} !important; } }` }} />
         <span className="nl-heading-dyn">Stay in the loop</span>
       </h1>
       <p
-        className="font-neue-haas font-normal m-0 mb-[2.4rem]"
-        style={{ fontSize: newsletterDes || '1.6rem' }}
+        className="font-neue-haas font-normal m-0 mb-[2.4rem] text-[length:var(--nl-des)]"
+        style={{ '--nl-des': newsletterDes || '1.6rem' } as React.CSSProperties}
       >
         Innovation stories, cohorts and open calls from the hub.
       </p>

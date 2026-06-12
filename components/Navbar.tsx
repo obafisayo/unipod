@@ -49,7 +49,7 @@ function Navbar() {
 
   return (
     <header
-      className={`fixed top-[1.5rem] right-[2rem] left-[2rem] z-[200] md:top-[4rem] md:right-[var(--content-padding)] md:left-[var(--content-padding)] navigation ${pathname !== '/' ? 'is-home-link-shown' : ''} ${pathname === '/' ? 'is-home' : ''}`.trim()}
+      className={`fixed top-6 right-8 left-8 z-200 md:top-16 md:right-(--content-padding) md:left-(--content-padding) navigation ${pathname !== '/' ? 'is-home-link-shown' : ''} ${pathname === '/' ? 'is-home' : ''}`.trim()}
       ref={navRef}
     >
       <style dangerouslySetInnerHTML={{__html: `
@@ -127,20 +127,20 @@ function Navbar() {
           }
         }
       `}} />
-      <div className="flex flex-row-reverse items-center mx-auto w-full max-w-[256rem] md:flex-row">
+      <div className="flex flex-row-reverse items-center mx-auto w-full max-w-1024 md:flex-row">
         <button
-          className="navigation-toggle relative p-0 w-[4.2rem] h-[4.2rem] bg-white shadow-[0_0.4rem_2rem_rgba(0,0,0,.08)] border-none rounded-[0.4rem] cursor-pointer ml-auto z-[200] md:hidden"
+          className="navigation-toggle relative p-0 w-[4.2rem] h-[4.2rem] bg-white shadow-[0_0.4rem_2rem_rgba(0,0,0,.08)] border-none rounded-[0.4rem] cursor-pointer ml-auto z-200 md:hidden"
           aria-label="Open main navigation"
           onClick={handleClick}
           ref={toggleRef}
         >
-          <span className="navigation-toggle__icon transition-transform duration-300 ease-in-out absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[2.3rem] h-[0.1rem] bg-[#0c0c0c] lg:hidden"></span>
-          <span className="navigation-toggle__icon navigation-toggle__icon--secondary transition-transform duration-300 ease-in-out absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[2.3rem] h-[0.1rem] bg-[#0c0c0c] lg:hidden"></span>
+          <span className="navigation-toggle__icon transition-transform duration-300 ease-in-out absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[2.3rem] h-[0.1rem] bg-brand-dark lg:hidden"></span>
+          <span className="navigation-toggle__icon navigation-toggle__icon--secondary transition-transform duration-300 ease-in-out absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[2.3rem] h-[0.1rem] bg-brand-dark lg:hidden"></span>
         </button>
         <div className="navigation__home-link-wrapper">
           <Totop component={
             <Link
-              className="navigation__home-link transition-colors duration-300 ease-in-out flex justify-center items-center w-[4.2rem] h-[4.2rem] bg-white rounded-[0.4rem] md:w-[3.6rem] md:h-[3.6rem] active-logo hover:bg-[#797af2]"
+              className="navigation__home-link transition-colors duration-300 ease-in-out flex justify-center items-center w-[4.2rem] h-[4.2rem] bg-white rounded-[0.4rem] md:w-[3.6rem] md:h-[3.6rem] active-logo hover:bg-brand-purple"
               href="/"
             >
               <Image className="w-full max-w-[2.2rem] h-auto" src="/assets/unipod-logo.png" alt="Unipod" width={28} height={28} />
@@ -148,29 +148,29 @@ function Navbar() {
           } />
         </div>
         <nav
-          className="navigation__links-wrapper transition-all duration-300 ease-in-out fixed top-0 right-0 bottom-0 left-0 z-[175] bg-[#f6f6ef] opacity-0 invisible overflow-y-auto md:relative md:top-auto md:right-auto md:bottom-auto md:left-auto md:z-auto md:bg-transparent md:opacity-100 md:visible md:overflow-visible"
+          className="navigation__links-wrapper transition-all duration-300 ease-in-out fixed top-0 right-0 bottom-0 left-0 z-175 bg-brand-cream opacity-0 invisible overflow-y-auto md:relative md:top-auto md:right-auto md:bottom-auto md:left-auto md:z-auto md:bg-transparent md:opacity-100 md:visible md:overflow-visible"
           aria-label="Main navigation"
         >
           <Totop component={
             <div className="navigation__links flex flex-col items-start gap-[2.1rem] p-[11.2rem_2rem_2rem] md:flex-row md:items-center md:gap-[0.8rem] md:p-0 md:bg-transparent">
-              <Link onClick={newhandleClick} className={`${isActive('/about-us')} p-[0.15rem] rounded-[0.3rem] relative overflow-hidden no-underline md:bg-white md:hover:bg-[#797af2] md:transition-colors md:duration-300 md:ease-in-out`} title="About Us" href="/about-us">
-                <div className="navigation__link-background transition-opacity duration-300 ease-in-out absolute top-0 left-0 w-full h-full z-[1]"></div>
-                <span className="navigation__link-button-text transition-all duration-300 ease-in-out relative z-[2] flex items-center text-[#0c0c0c] leading-[1.11] font-machina text-[3.4rem] font-normal no-underline uppercase border-[0.1rem] border-solid border-transparent md:p-[0_1rem] md:h-[3.6rem] md:leading-[1.2] md:tracking-[0.01em] md:font-neue-haas md:text-[1.4rem] md:font-medium md:normal-case md:bg-white md:border-white md:rounded-[0.2rem] md:shadow-[0_0.4rem_2rem_rgba(0,0,0,.08)] md:group-hover:bg-[#797af2] md:group-hover:border-[#797af2]">About Us</span>
+              <Link onClick={newhandleClick} className={`${isActive('/about-us')} p-[0.15rem] rounded-[0.3rem] relative overflow-hidden no-underline md:bg-white md:hover:bg-brand-purple md:transition-colors md:duration-300 md:ease-in-out`} title="About Us" href="/about-us">
+                <div className="navigation__link-background transition-opacity duration-300 ease-in-out absolute top-0 left-0 w-full h-full z-1"></div>
+                <span className="navigation__link-button-text transition-all duration-300 ease-in-out relative z-2 flex items-center text-brand-dark leading-[1.11] font-machina text-[3.4rem] font-normal no-underline uppercase border-[0.1rem] border-solid border-transparent md:p-[0_1rem] md:h-[3.6rem] md:leading-[1.2] md:tracking-[0.01em] md:font-neue-haas md:text-[1.4rem] md:font-medium md:normal-case md:bg-white md:border-white md:rounded-[0.2rem] md:shadow-[0_0.4rem_2rem_rgba(0,0,0,.08)] md:group-hover:bg-brand-purple md:group-hover:border-brand-purple">About Us</span>
               </Link>
               <div className="relative top-[-0.3rem] w-full h-[0.1rem] bg-[hsla(0,0%,5%,.2)] md:hidden"></div>
-              <Link onClick={newhandleClick} className={`${isActive('/master-plan')} p-[0.15rem] rounded-[0.3rem] relative overflow-hidden no-underline md:bg-white md:hover:bg-[#797af2] md:transition-colors md:duration-300 md:ease-in-out`} title="Master Plan" href="/master-plan">
-                <div className="navigation__link-background transition-opacity duration-300 ease-in-out absolute top-0 left-0 w-full h-full z-[1]"></div>
-                <span className="navigation__link-button-text transition-all duration-300 ease-in-out relative z-[2] flex items-center text-[#0c0c0c] leading-[1.11] font-machina text-[3.4rem] font-normal no-underline uppercase border-[0.1rem] border-solid border-transparent md:p-[0_1rem] md:h-[3.6rem] md:leading-[1.2] md:tracking-[0.01em] md:font-neue-haas md:text-[1.4rem] md:font-medium md:normal-case md:bg-white md:border-white md:rounded-[0.2rem] md:shadow-[0_0.4rem_2rem_rgba(0,0,0,.08)] md:group-hover:bg-[#797af2] md:group-hover:border-[#797af2]">Master Plan</span>
+              <Link onClick={newhandleClick} className={`${isActive('/master-plan')} p-[0.15rem] rounded-[0.3rem] relative overflow-hidden no-underline md:bg-white md:hover:bg-brand-purple md:transition-colors md:duration-300 md:ease-in-out`} title="Master Plan" href="/master-plan">
+                <div className="navigation__link-background transition-opacity duration-300 ease-in-out absolute top-0 left-0 w-full h-full z-1"></div>
+                <span className="navigation__link-button-text transition-all duration-300 ease-in-out relative z-2 flex items-center text-brand-dark leading-[1.11] font-machina text-[3.4rem] font-normal no-underline uppercase border-[0.1rem] border-solid border-transparent md:p-[0_1rem] md:h-[3.6rem] md:leading-[1.2] md:tracking-[0.01em] md:font-neue-haas md:text-[1.4rem] md:font-medium md:normal-case md:bg-white md:border-white md:rounded-[0.2rem] md:shadow-[0_0.4rem_2rem_rgba(0,0,0,.08)] md:group-hover:bg-brand-purple md:group-hover:border-brand-purple">Master Plan</span>
               </Link>
               <div className="relative top-[-0.3rem] w-full h-[0.1rem] bg-[hsla(0,0%,5%,.2)] md:hidden"></div>
-              <Link onClick={newhandleClick} className={`${isActive('/culture')} p-[0.15rem] rounded-[0.3rem] relative overflow-hidden no-underline md:bg-white md:hover:bg-[#797af2] md:transition-colors md:duration-300 md:ease-in-out`} title="Culture" href="/culture">
-                <div className="navigation__link-background transition-opacity duration-300 ease-in-out absolute top-0 left-0 w-full h-full z-[1]"></div>
-                <span className="navigation__link-button-text transition-all duration-300 ease-in-out relative z-[2] flex items-center text-[#0c0c0c] leading-[1.11] font-machina text-[3.4rem] font-normal no-underline uppercase border-[0.1rem] border-solid border-transparent md:p-[0_1rem] md:h-[3.6rem] md:leading-[1.2] md:tracking-[0.01em] md:font-neue-haas md:text-[1.4rem] md:font-medium md:normal-case md:bg-white md:border-white md:rounded-[0.2rem] md:shadow-[0_0.4rem_2rem_rgba(0,0,0,.08)] md:group-hover:bg-[#797af2] md:group-hover:border-[#797af2]">Culture</span>
+              <Link onClick={newhandleClick} className={`${isActive('/culture')} p-[0.15rem] rounded-[0.3rem] relative overflow-hidden no-underline md:bg-white md:hover:bg-brand-purple md:transition-colors md:duration-300 md:ease-in-out`} title="Culture" href="/culture">
+                <div className="navigation__link-background transition-opacity duration-300 ease-in-out absolute top-0 left-0 w-full h-full z-1"></div>
+                <span className="navigation__link-button-text transition-all duration-300 ease-in-out relative z-2 flex items-center text-brand-dark leading-[1.11] font-machina text-[3.4rem] font-normal no-underline uppercase border-[0.1rem] border-solid border-transparent md:p-[0_1rem] md:h-[3.6rem] md:leading-[1.2] md:tracking-[0.01em] md:font-neue-haas md:text-[1.4rem] md:font-medium md:normal-case md:bg-white md:border-white md:rounded-[0.2rem] md:shadow-[0_0.4rem_2rem_rgba(0,0,0,.08)] md:group-hover:bg-brand-purple md:group-hover:border-brand-purple">Culture</span>
               </Link>
               <div className="relative top-[-0.3rem] w-full h-[0.1rem] bg-[hsla(0,0%,5%,.2)] md:hidden"></div>
-              <Link onClick={newhandleClick} className={`${isActive('/careers')} p-[0.15rem] rounded-[0.3rem] relative overflow-hidden no-underline md:bg-white md:hover:bg-[#797af2] md:transition-colors md:duration-300 md:ease-in-out`} title="Careers" href="/careers">
-                <div className="navigation__link-background transition-opacity duration-300 ease-in-out absolute top-0 left-0 w-full h-full z-[1]"></div>
-                <span className="navigation__link-button-text transition-all duration-300 ease-in-out relative z-[2] flex items-center text-[#0c0c0c] leading-[1.11] font-machina text-[3.4rem] font-normal no-underline uppercase border-[0.1rem] border-solid border-transparent md:p-[0_1rem] md:h-[3.6rem] md:leading-[1.2] md:tracking-[0.01em] md:font-neue-haas md:text-[1.4rem] md:font-medium md:normal-case md:bg-white md:border-white md:rounded-[0.2rem] md:shadow-[0_0.4rem_2rem_rgba(0,0,0,.08)] md:group-hover:bg-[#797af2] md:group-hover:border-[#797af2]">Careers</span>
+              <Link onClick={newhandleClick} className={`${isActive('/proposals')} p-[0.15rem] rounded-[0.3rem] relative overflow-hidden no-underline md:bg-white md:hover:bg-brand-purple md:transition-colors md:duration-300 md:ease-in-out`} title="Proposals" href="/proposals">
+                <div className="navigation__link-background transition-opacity duration-300 ease-in-out absolute top-0 left-0 w-full h-full z-1"></div>
+                <span className="navigation__link-button-text transition-all duration-300 ease-in-out relative z-2 flex items-center text-brand-dark leading-[1.11] font-machina text-[3.4rem] font-normal no-underline uppercase border-[0.1rem] border-solid border-transparent md:p-[0_1rem] md:h-[3.6rem] md:leading-[1.2] md:tracking-[0.01em] md:font-neue-haas md:text-[1.4rem] md:font-medium md:normal-case md:bg-white md:border-white md:rounded-[0.2rem] md:shadow-[0_0.4rem_2rem_rgba(0,0,0,.08)] md:group-hover:bg-brand-purple md:group-hover:border-brand-purple">Proposals</span>
               </Link>
               <div className="relative top-[-0.3rem] w-full h-[0.1rem] bg-[hsla(0,0%,5%,.2)] md:hidden"></div>
             </div>

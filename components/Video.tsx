@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 import NewsletterMail from "./NewsletterMail";
 import Slider from "./Slider";
 import Button from "./Button";
@@ -107,13 +108,10 @@ function Video({
     progressRef.current?.classList.remove("is-hovering");
   }
 
-  const ringStyle = {
-    transition: "stroke-dashoffset 5ms ease 0s",
-    strokeDashoffset: `${dashoffset}`,
-  };
+  // ringStyle removed to use CSS variables on parent
 
   const whichPicture = career ? figureHr1 : figureMaster1;
-  const contentClass = `relative mx-auto bg-[#0c0c0c] w-full min-h-[60rem] max-w-1024 flex flex-col overflow-hidden aspect-[1500/3248] min-[480px]:aspect-[3840/2160] pt-[8.2rem] px-[var(--content-padding)] pb-0 md:pt-[11.6rem] md:pb-[5rem] md:flex-row md:justify-between ${career ? "hero--layout-2" : ""}`;
+  const contentClass = `relative mx-auto bg-brand-dark w-full min-h-240 max-w-1024 flex flex-col overflow-hidden aspect-[1500/3248] min-[480px]:aspect-[3840/2160] pt-[8.2rem] px-(--content-padding) pb-0 md:pt-[11.6rem] md:pb-[5rem] md:flex-row md:justify-between ${career ? "hero--layout-2" : ""}`;
 
   return (
     <section className="block">
@@ -129,16 +127,26 @@ function Video({
 
         {/* ── poster image — z-index 4 keeps it above video (z-index 3) until play ── */}
         {showPicture && (
-          <picture className="absolute top-0 right-0 bottom-0 left-0 z-4 block">
-            <source srcSet={figureMaster1} media="(min-width: 768px)" />
-            <img
-              src={whichPicture}
-              width="750"
-              height="1624"
-              alt="Unipod innovation hub"
-              className="absolute top-0 right-0 bottom-0 left-0 object-center object-cover w-full h-full"
-            />
-          </picture>
+          <div className="absolute top-0 right-0 bottom-0 left-0 z-4 block">
+            <div className="block md:hidden h-full">
+              <Image
+                src={whichPicture}
+                width={750}
+                height={1624}
+                alt="Unipod innovation hub"
+                className="absolute top-0 right-0 bottom-0 left-0 object-center object-cover w-full h-full"
+              />
+            </div>
+            <div className="hidden md:block h-full">
+              <Image
+                src={figureMaster1}
+                width={1920}
+                height={1080}
+                alt="Unipod innovation hub"
+                className="absolute top-0 right-0 bottom-0 left-0 object-center object-cover w-full h-full"
+              />
+            </div>
+          </div>
         )}
 
         {/* ── video — z-index 3, sits under the poster overlay ── */}
@@ -166,14 +174,13 @@ function Video({
           {career ? (
             <div>
               <h1
-                className="leading-[1.11] font-machina text-[3.4rem] font-normal uppercase mb-[1.3rem] text-white md:text-[3rem] lg:text-[5.2rem] m-0"
-                style={{ fontFeatureSettings: '"ss12" on' }}
+                className="leading-[1.11] font-machina text-[3.4rem] font-normal uppercase mb-[1.3rem] text-white md:text-[3rem] lg:text-[5.2rem] m-0 font-features-['ss12'_on]"
               >
                 {heading}
               </h1>
               {button && (
-                <a href="/careers#careers-listing" title="Careers listing">
-                  <Button text="See all open roles" arrowdown />
+                <a href="/proposals#proposals-listing" title="Proposals listing">
+                  <Button text="See all open fellowships" arrowdown />
                 </a>
               )}
             </div>
@@ -183,8 +190,7 @@ function Video({
                 {heading}
               </h1>
               <p
-                className="font-neue-haas text-[1rem] font-normal md:text-[2rem] text-gray-300"
-                style={{ fontFeatureSettings: '"ss12" on' }}
+                className="font-neue-haas text-[1rem] font-normal md:text-[2rem] text-gray-300 font-features-['ss12'_on]"
               >
                 {subtext}
               </p>
@@ -203,6 +209,7 @@ function Video({
               onMouseEnter={handleEnter}
               onMouseLeave={handleLeave}
               aria-label="play / pause video"
+              style={{ '--dashoffset': dashoffset } as React.CSSProperties}
             >
               {/* Gradient progress ring */}
               <svg
@@ -258,7 +265,7 @@ function Video({
                 />
                 {/* Progress arc */}
                 <circle
-                  className="hero-video-progress__progress-circle"
+                  className="hero-video-progress__progress-circle transition-[stroke-dashoffset] duration-[5ms] ease-[ease] [stroke-dashoffset:var(--dashoffset)]"
                   cx="26.5"
                   cy="26.5"
                   r="23"
@@ -266,12 +273,10 @@ function Video({
                   strokeWidth="1"
                   fill="none"
                   strokeDasharray="144.51326206513048"
-                  strokeDashoffset="144.51326206513048"
-                  style={ringStyle}
                 />
                 {/* Blur glow layer 1 */}
                 <circle
-                  className="hero-video-progress__progress-circle hero-video-progress__progress-circle--blur"
+                  className="hero-video-progress__progress-circle hero-video-progress__progress-circle--blur transition-[stroke-dashoffset] duration-[5ms] ease-[ease] [stroke-dashoffset:var(--dashoffset)]"
                   cx="26.5"
                   cy="26.5"
                   r="23"
@@ -279,13 +284,11 @@ function Video({
                   strokeWidth="1"
                   fill="none"
                   strokeDasharray="144.51326206513048"
-                  strokeDashoffset="144.51326206513048"
                   filter="url(#home-video-progress-blur-filter)"
-                  style={ringStyle}
                 />
                 {/* Blur glow layer 2 */}
                 <circle
-                  className="hero-video-progress__progress-circle hero-video-progress__progress-circle--blur"
+                  className="hero-video-progress__progress-circle hero-video-progress__progress-circle--blur transition-[stroke-dashoffset] duration-[5ms] ease-[ease] [stroke-dashoffset:var(--dashoffset)]"
                   cx="26.5"
                   cy="26.5"
                   r="23"
@@ -293,9 +296,7 @@ function Video({
                   strokeWidth="1"
                   fill="none"
                   strokeDasharray="144.51326206513048"
-                  strokeDashoffset="144.51326206513048"
                   filter="url(#home-video-progress-blur-filter)"
-                  style={ringStyle}
                 />
               </svg>
 
@@ -331,7 +332,7 @@ function Video({
                 </defs>
                 <mask
                   id="svg-id-4967.31175585768-mask"
-                  style={{ maskType: "alpha" }}
+                  className="[mask-type:alpha]"
                   maskUnits="userSpaceOnUse"
                   x="0"
                   y="0"
@@ -377,7 +378,7 @@ function Video({
                 </defs>
                 <mask
                   id="svg-id-3371.905405673761-mask"
-                  style={{ maskType: "alpha" }}
+                  className="[mask-type:alpha]"
                   maskUnits="userSpaceOnUse"
                   x="0"
                   y="0"
@@ -423,7 +424,7 @@ function Video({
                 </defs>
                 <mask
                   id="svg-id-3161.2831055466663-mask"
-                  style={{ maskType: "alpha" }}
+                  className="[mask-type:alpha]"
                   maskUnits="userSpaceOnUse"
                   x="0"
                   y="0"
@@ -451,8 +452,10 @@ function Video({
                 rel="noreferrer noopener"
                 href="https://www.undp.org/africa/timbuktoo"
                 className="no-underline"
+                title="Watch the full video"
               >
                 <Slider
+                  asDiv
                   text="Watch the full video"
                   icon
                   arrowUpRight

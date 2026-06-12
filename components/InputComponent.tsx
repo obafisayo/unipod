@@ -51,12 +51,12 @@ function InputComponent({ text, button, type, width, height, fsz, textarea, inpu
       ref={customInput} 
       onFocus={focusInput} 
       onBlur={blurInput}
-      className="transition-[border-color] duration-300 ease-in-out flex items-center bg-white border-[0.1rem] border-white px-[0.5rem] py-[0.5rem] pl-[2.4rem] w-full"
+      className="transition-[border-color] duration-300 ease-in-out flex items-center bg-white border-[0.1rem] border-white px-[0.5rem] py-[0.5rem] pl-[2.4rem] w-[var(--input-w)] h-[var(--input-h)] rounded-[var(--input-br)]"
       style={{
-        width: width || '100%',
-        height: height || '5.8rem',
-        borderRadius: borr || '2.9rem',
-      }}
+        '--input-w': width || '100%',
+        '--input-h': height || '5.8rem',
+        '--input-br': borr || '2.9rem',
+      } as React.CSSProperties}
     >
       {input && (
         <label className="relative flex items-center m-0 mr-[0.5rem] w-full h-full cursor-default">
@@ -68,8 +68,8 @@ function InputComponent({ text, button, type, width, height, fsz, textarea, inpu
           </span>
           <input 
             ref={customInputInput as React.RefObject<HTMLInputElement>} 
-            className="transition-transform duration-300 ease-in-out font-neue-haas tracking-[-0.01em] block p-0 w-full h-[2rem] bg-transparent border-none outline-none"
-            style={{ fontSize: fsz || '1.4rem' }}
+            className="transition-transform duration-300 ease-in-out font-neue-haas tracking-[-0.01em] block p-0 w-full h-[2rem] bg-transparent border-none outline-none text-[length:var(--input-fsz)]"
+            style={{ '--input-fsz': fsz || '1.4rem' } as React.CSSProperties}
             name={name} 
             type={type} 
             required 
@@ -87,8 +87,8 @@ function InputComponent({ text, button, type, width, height, fsz, textarea, inpu
           </span>
           <textarea 
             ref={customInputInput as React.RefObject<HTMLTextAreaElement>} 
-            className="transition-transform duration-300 ease-in-out font-neue-haas tracking-[-0.01em] block p-0 w-full bg-transparent border-none outline-none min-h-[13rem] pt-[1.5rem]"
-            style={{ fontSize: fsz || '1.4rem' }}
+            className="transition-transform duration-300 ease-in-out font-neue-haas tracking-[-0.01em] block p-0 w-full bg-transparent border-none outline-none min-h-[13rem] pt-[1.5rem] text-[length:var(--input-fsz)]"
+            style={{ '--input-fsz': fsz || '1.4rem' } as React.CSSProperties}
             name={name} 
             required 
             aria-invalid="false"

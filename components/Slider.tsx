@@ -41,18 +41,15 @@ function Slider({ news, text, icon, plus, arrowUpRight, arrowLeft, arrowRight, s
   const sharedProps = {
     onMouseEnter: onEnter,
     onMouseLeave: onLeave,
-    className: `relative inline-flex items-center cursor-pointer p-0 border-none no-underline transition-[background-size] duration-300 ease-in-out ${sb ? 'justify-between' : 'justify-center'} group slider-button ${className || ''}`,
+    className: `relative inline-flex items-center cursor-pointer p-0 border-none no-underline transition-[background-size] duration-300 ease-in-out ${sb ? 'justify-between' : 'justify-center'} group slider-button leading-[1.2] bg-[image:var(--slider-bg)] text-[color:var(--slider-color)] [font-family:var(--slider-font)] text-[length:var(--slider-fsz)] font-[number:var(--slider-fw)] tracking-[var(--slider-ls)] [background-size:var(--slider-bg-size)] [background-position:100%_100%,0_100%] bg-no-repeat ${className || ''}`,
     style: {
-      lineHeight: 1.2,
-      fontFamily: ff || 'pp-neue-machina-plain, sans-serif',
-      fontSize: fsz || '1.4rem',
-      fontWeight: fw || '500',
-      letterSpacing: ls || '0',
-      color: light ? '#ffffff' : '#0c0c0c',
-      background: bgGradient,
-      backgroundSize: hovered ? '0 0.1rem, 100% 0.1rem' : '100% 0.1rem, 0 0.1rem',
-      backgroundPosition: '100% 100%, 0 100%',
-      backgroundRepeat: 'no-repeat',
+      '--slider-font': ff || 'pp-neue-machina-plain, sans-serif',
+      '--slider-fsz': fsz || '1.4rem',
+      '--slider-fw': fw || '500',
+      '--slider-ls': ls || '0',
+      '--slider-color': light ? '#ffffff' : '#0c0c0c',
+      '--slider-bg': bgGradient,
+      '--slider-bg-size': hovered ? '0 0.1rem, 100% 0.1rem' : '100% 0.1rem, 0 0.1rem',
     } as React.CSSProperties,
   };
 
@@ -61,13 +58,13 @@ function Slider({ news, text, icon, plus, arrowUpRight, arrowLeft, arrowRight, s
       <span className="relative z-10">{text}</span>
 
       <div
-        className="absolute left-0 bottom-0 transition-all duration-300 ease-in-out pointer-events-none"
+        className="absolute left-0 bottom-0 transition-all duration-300 ease-in-out pointer-events-none h-[var(--slider-h)] bg-[var(--slider-bc)] w-[var(--slider-w)] top-[var(--slider-top)]"
         style={{
-          height: height || '1px',
-          backgroundColor: bordercolor || 'black',
-          width: hovered || slide ? '100%' : (unslide ? '0' : (news ? '100%' : '0')),
-          top: pri ? '4.8rem' : 'auto'
-        }}
+          '--slider-h': height || '1px',
+          '--slider-bc': bordercolor || 'black',
+          '--slider-w': hovered || slide ? '100%' : (unslide ? '0' : (news ? '100%' : '0')),
+          '--slider-top': pri ? '4.8rem' : 'auto'
+        } as React.CSSProperties}
       />
 
       {icon && plus && <Svg plus hov={hover} />}

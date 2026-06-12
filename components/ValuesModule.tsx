@@ -8,11 +8,11 @@ import Totop from "./Totop";
 function ValuesModule() {
   return (
     <section className="section section--with-background section--dark">
-      <section className="values-module bg-[#0c0c0c] text-white p-[16rem_var(--content-padding)]">
+      <section className="values-module bg-brand-dark text-white p-[16rem_var(--content-padding)]">
         <div id="our-values" className="section__anchor"></div>
-        <div className="values-module__inner max-w-[256rem] w-full mx-auto">
+        <div className="values-module__inner max-w-1024 w-full mx-auto">
           <div className="values-module__top-content mb-[3.2rem] md:mb-[5.2rem]">
-            <span className="values-module__kicker font-neue-haas text-[1.4rem] font-medium leading-[1.2] tracking-[0]">Our Values</span>
+            <span className="values-module__kicker font-neue-haas text-[1.4rem] font-medium leading-[1.2] tracking-normal">Our Values</span>
             <h1 className="values-module__heading font-neue-haas text-[2.4rem] font-normal leading-[1.1] tracking-[-0.01em] m-[1rem_0_0] max-w-[44rem] w-full md:text-[3.6rem]">Breaking the limits of human achievement</h1>
           </div>
           <ol className="values-module__values p-0 m-0 list-none">

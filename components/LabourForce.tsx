@@ -7,7 +7,7 @@ function LabourForce() {
     <section>
       <section className="section stats-module section--small-margin p-[0_var(--content-padding)] relative overflow-hidden">
         <div id="stats-module" className="section__anchor"></div>
-        <div className="stats-module__inner w-full max-w-[256rem] mx-auto">
+        <div className="stats-module__inner w-full max-w-1024 mx-auto">
           <div className="stats-item pt-0 md:pt-auto md:border-t-0">
             <LabourForceText h1={'There are 10 million unfilled jobs in the United States.'} span={'10M'} />
           </div>

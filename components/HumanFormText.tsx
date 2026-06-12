@@ -9,11 +9,11 @@ interface HumanFormTextProps {
 
 function HumanFormText({ value, title, blackText }: HumanFormTextProps) {
   return (
-    <div className="text-right flex flex-col justify-end items-end gap-[1rem] md:gap-[2rem] pt-[1rem] md:pt-[2rem] border-t-[0.1rem] border-solid border-[hsla(0,0%,5%,.1)] md:first:border-t-0">
-      <dt className={`leading-[1.2] font-neue-haas text-[1.4rem] font-medium tracking-[0] ${blackText ? 'text-[#0c0c0c]' : 'text-white'}`}>
+    <div className="text-right flex flex-col justify-end items-end gap-[1rem] md:gap-8 pt-[1rem] md:pt-8 border-t-[0.1rem] border-solid border-[hsla(0,0%,5%,.1)] md:first:border-t-0">
+      <dt className={`leading-[1.2] font-neue-haas text-[1.4rem] font-medium tracking-normal ${blackText ? 'text-brand-dark' : 'text-white'}`}>
         {title}
       </dt>
-      <dd className="leading-[1] font-machina text-[4.2rem] md:text-[10rem] lg:text-[14.5rem] lg:leading-[14.5rem] font-normal tracking-[-0.01em] uppercase text-transparent whitespace-nowrap bg-clip-text" style={{ backgroundImage: "linear-gradient(-90deg,#ff38bb 4.25%,#ff8038 51.61%,#f5be66 80.43%,#f4dca8 93.03%)", WebkitBackgroundClip: "text", fontFeatureSettings: '"ss12" on' }}>
+      <dd className="leading-none font-machina text-[4.2rem] md:text-[10rem] lg:text-[14.5rem] lg:leading-[14.5rem] font-normal tracking-[-0.01em] uppercase text-transparent whitespace-nowrap bg-clip-text bg-[linear-gradient(-90deg,#ff38bb_4.25%,#ff8038_51.61%,#f5be66_80.43%,#f4dca8_93.03%)] font-features-['ss12'_on]">
         <span className="stats-module__number-shuffler">{value}</span>
       </dd>
     </div>

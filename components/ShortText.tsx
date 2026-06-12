@@ -22,7 +22,7 @@ function ShortText({ header, paragraph, to, bt, paragraph2, kicker, bcc, nomargi
 
   return (
     <section
-      className={`relative ${nomargin ? 'px-[var(--content-padding)] md:px-[var(--content-padding)]' : 'pt-[4rem] px-[var(--content-padding)] pb-[8rem] md:pt-[12rem] md:pb-[16rem]'} ${ppeff ? 'md:pt-[16rem]' : ''} ${!ppeff ? 'lg:pr-[8rem]' : ''}`}
+      className={`relative ${nomargin ? 'px-(--content-padding) md:px-(--content-padding)' : 'pt-[4rem] px-(--content-padding) pb-[8rem] md:pt-[12rem] md:pb-[16rem]'} ${ppeff ? 'md:pt-64' : ''} ${!ppeff ? 'lg:pr-[8rem]' : ''}`}
       style={{ backgroundColor: bg, color: textColor }}
     >
       <style>{`
@@ -55,16 +55,16 @@ function ShortText({ header, paragraph, to, bt, paragraph2, kicker, bcc, nomargi
         <div id="were-engineering-the-humanoid-to-make-humans-capable-of-more" className="absolute top-[-7.2rem] md:top-[-12.8rem]"></div>
         <div className="cta-content">
           <div 
-            className={`flex flex-col w-full ${nomargin ? 'gap-0 md:gap-0' : 'gap-[2rem] md:gap-0'}`} 
+            className={`flex flex-col w-full ${nomargin ? 'gap-0 md:gap-0' : 'gap-8 md:gap-0'}`} 
             style={{ maxWidth: ppeff ? '70.2rem' : '57.2rem', gridArea: 'heading' }}
           >
             {kicker && (
-              <div className={`leading-[1.2] text-[1.4rem] font-medium tracking-[0] ${ppeff ? 'font-machina uppercase' : 'font-neue-haas'}`}>
+              <div className={`leading-[1.2] text-[1.4rem] font-medium tracking-normal ${ppeff ? 'font-machina uppercase' : 'font-neue-haas'}`}>
                 {kicker}
               </div>
             )}
             {header && (
-              <h1 className={`cta-heading m-0 font-normal tracking-[-0.01em] ${headerfsz ? 'leading-[1]' : 'leading-[1.1]'} ${ppeff ? 'font-machina uppercase' : 'font-neue-haas'}`}>
+              <h1 className={`cta-heading m-0 font-normal tracking-[-0.01em] ${headerfsz ? 'leading-none' : 'leading-[1.1]'} ${ppeff ? 'font-machina uppercase' : 'font-neue-haas'}`}>
                 {header}
               </h1>
             )}
@@ -72,7 +72,7 @@ function ShortText({ header, paragraph, to, bt, paragraph2, kicker, bcc, nomargi
           
           {(paragraph || paragraph2) && (
             <div 
-              className={`flex flex-col gap-[2rem] md:justify-end ${paragraph2 ? 'md:flex-col md:gap-[20px]' : ''}`} 
+              className={`flex flex-col gap-8 md:justify-end ${paragraph2 ? 'md:flex-col md:gap-[20px]' : ''}`} 
               style={{ gridArea: 'description' }}
             >
               {paragraph && (

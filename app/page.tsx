@@ -101,7 +101,7 @@ function Home() {
       {/* CTA 3 */}
       <ShortText
         bt="Submit a Proposal"
-        to="/careers"
+        to="/proposals"
         header="The people building the pod"
         paragraph="Unipod is powered by a community of academics, engineers, designers, mentors and student founders — all working to turn ideas into impact."
       />

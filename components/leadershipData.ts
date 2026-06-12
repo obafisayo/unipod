@@ -6,8 +6,8 @@ const make = (src: string) => widths.map((w) => ({ src, width: w }));
 const leadershipData = [
     {
         id: nanoid(),
-        imgsources: make('/assets/entrance-mural.jpg'),
-        src: '/assets/entrance-mural.jpg',
+        imgsources: make('/assets/ogunsola.jpg'),
+        src: '/assets/ogunsola.jpg',
         name: `Prof. Folasade T. Ogunsola`,
         title: `Vice-Chancellor, UNILAG (OON, FAS)`,
         para1: `Professor Folasade T. Ogunsola is the Vice-Chancellor of the University of Lagos and the executive champion of the AI Unipod.`,
@@ -17,8 +17,8 @@ const leadershipData = [
     },
     {
         id: nanoid(),
-        imgsources: make('/assets/mezzanine.jpg'),
-        src: '/assets/mezzanine.jpg',
+        imgsources: make('/assets/attafauh.jpg'),
+        src: '/assets/attafauh.jpg',
         name: `Elsie G. Attafuah`,
         title: `Resident Representative, UNDP Nigeria`,
         para1: `Elsie G. Attafuah is the UNDP Resident Representative in Nigeria and a driving force behind the national Unipod programme.`,
@@ -28,8 +28,8 @@ const leadershipData = [
     },
     {
         id: nanoid(),
-        imgsources: make('/assets/robotics-lab.jpg'),
-        src: '/assets/robotics-lab.jpg',
+        imgsources: make('/assets/yinka-banjo.jpg'),
+        src: '/assets/yinka-banjo.jpg',
         name: `Prof. Chika Yinka-Banjo`,
         title: `Pioneer Director, AI Unipod`,
         para1: `Professor Chika Yinka-Banjo is the Pioneer Director of the AI Unipod at the University of Lagos.`,

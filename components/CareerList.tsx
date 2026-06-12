@@ -9,10 +9,10 @@ function CareerList() {
     <section className="p-[8rem_var(--content-padding)] md:p-[16rem_var(--content-padding)] bg-brand-dark">
       <section className="relative overflow-hidden text-white">
         <div id="careers-listing"></div>
-        <div className="w-full max-w-[256rem] mx-auto grid grid-cols-1 gap-[6rem] lg:gap-[9rem] lg:grid-cols-[22rem_1fr]">
-          <div className="flex flex-col items-start gap-[2rem] w-full sm:max-w-[30rem]">
+        <div className="w-full max-w-1024 mx-auto grid grid-cols-1 gap-[6rem] lg:gap-36 lg:grid-cols-[22rem_1fr]">
+          <div className="flex flex-col items-start gap-8 w-full sm:max-w-[30rem]">
             <h1 className="font-neue-haas text-[2.4rem] font-normal leading-[1.1] tracking-[-0.01em] m-0 md:text-[3.6rem]">Open roles</h1>
-            <p className="font-neue-haas text-[1.4rem] leading-[1.5] tracking-[-0.01em] m-0">Have another role in mind? Let us know what you could bring to the team.</p>
+            <p className="font-neue-haas text-[1.4rem] leading-normal tracking-[-0.01em] m-0">Have another role in mind? Let us know what you could bring to the team.</p>
             <Slider fw={'500'} fsz={'1.4rem'} slide text={'Contact Us'} icon arrowUpRight ff={"neue-haas-grot-text"} light bordercolor={'white'} />
           </div>
           <div>
@@ -81,7 +81,7 @@ function CareerList() {
                 </article>
               </li>
             </ul>
-            <p className="font-neue-haas text-[1.4rem] leading-[1.5] tracking-[-0.01em] text-[hsla(0,0%,100%,.6)] m-[2.5rem_0_0] md:text-[1.6rem] md:m-[5rem_0_0]">Unipod is an equal opportunity employer that is committed to diversity and inclusion in the workplace. We prohibit discrimination and harassment of any kind based on race, color, sex, religion, sexual orientation, national origin, disability, genetic information, pregnancy, or any other protected characteristic as outlined by federal, state, or local laws.</p>
+            <p className="font-neue-haas text-[1.4rem] leading-normal tracking-[-0.01em] text-[hsla(0,0%,100%,.6)] m-[2.5rem_0_0] md:text-[1.6rem] md:m-[5rem_0_0]">Unipod is an equal opportunity employer that is committed to diversity and inclusion in the workplace. We prohibit discrimination and harassment of any kind based on race, color, sex, religion, sexual orientation, national origin, disability, genetic information, pregnancy, or any other protected characteristic as outlined by federal, state, or local laws.</p>
           </div>
         </div>
       </section>

@@ -8,10 +8,10 @@ function Privacy() {
       <section className="section legal-content">
         <div id="privacy-policy" className="section__anchor"></div>
         <article className="legal-content__inner">
-          <TextGradient activeness text={'Privacy '} gtext={'Policy'} modifiedAt={'Last updated: January 25, 2023'}/>
+          <TextGradient activeness text={'Privacy '} gtext={'Policy'} modifiedAt={'Last updated: June 12, 2026'}/>
           <div className="legal-content__content">
             <p className="rich-text-paragraph">
-              <i>Last updated: February 1, 2023</i>
+              <i>Last updated: June 12, 2026</i>
             </p>
             <p className="rich-text-paragraph">This Privacy Policy outlines Unipod&apos;s handling of personal information in our business practices,
               including on our websites (referred to as &quot;Services&quot;), and in other interactions with us. Our Terms of Service are also included.
@@ -83,37 +83,17 @@ function Privacy() {
             <p className="rich-text-paragraph">If you would like to update your preferences, or opt out of marketing communications from us, you may do so at any time by contacting privacy@unipod.ai, or by following the opt out instructions in the marketing communications.
               Please note that we may continue to send non-promotional communications such as important notices and transaction-related emails and other information about your use of the Services.
             </p>
-            <p className="rich-text-paragraph">California Residents</p>
-            <p className="rich-text-paragraph">California residents have a right to knowledge, access, and deletion of their personal information under the California Consumer Privacy Act (CCPA).</p>
-            <p className="rich-text-paragraph">California residents also have a right to opt out of the sale of their personal information by a business, however Unipod does not sell personal information.</p>
-            <p className="rich-text-paragraph">When we say &quot;Personal Information&quot; in this disclosure, we mean information that identifies, relates to, describes, is reasonably capable of being associated with,
+            <p className="rich-text-paragraph">Your Data Protection Rights</p>
+            <p className="rich-text-paragraph">Depending on your location, including under the Nigeria Data Protection Act (NDPA) and the Nigeria Data Protection Regulation (NDPR), you have certain data protection rights regarding your personal information.</p>
+            <p className="rich-text-paragraph">These rights may include the right to request access to your personal information, the right to request correction of any inaccurate data, the right to request deletion of your personal information (subject to certain exceptions), and the right to object to or restrict the processing of your personal information.</p>
+            <p className="rich-text-paragraph">We do not sell your personal information. When we say &quot;Personal Information&quot; in this disclosure, we mean information that identifies, relates to, describes, is reasonably capable of being associated with,
               or could reasonably be linked, directly or indirectly, with you. Personal Information does not include information that is aggregated or information that cannot be reasonably linked to you.
             </p>
-            <p className="rich-text-paragraph">Unipod provides notice of our data practices throughout this Privacy Policy. This includes the categories of personal information we may collect,
-              the categories of sources of personal information, the purposes of use, as well as the categories of parties with whom Unipod may share personal information in the past 12 months.
-            </p>
-            <p className="rich-text-paragraph">Your California Rights and Choices</p>
-            <p className="rich-text-paragraph">This section describes the CCPA rights that you may have and explains how to exercise those rights. You have a right not to receive discriminatory treatment for exercising these privacy rights and Unipod does not discriminate in response to privacy rights requests.</p>
-            <p className="rich-text-paragraph">Right to Know About Personal Information Collected, Used, or Disclosed</p>
-            <p className="rich-text-paragraph">You have the right to request up to twice in a 12-month period that we disclose certain information to you about our collection, use and disclosure of your Personal Information over the past 12 months.
-              Once we receive your request, verify your identity and determine that we have your information, we will disclose to you the information you request in the following areas:
-              (1) the categories of Personal Information we collected about you;
-              (2) the categories of sources for the Personal Information;
-              (3) our business or commercial purpose for collecting that Personal Information;
-              (4) the categories of third parties with whom we shared that Personal Information; and
-              (5) the specific pieces of Personal Information we collected about you in the preceding 12 months.
-            </p>
-            <p className="rich-text-paragraph">Right to Delete Personal Information Collected or Maintained</p>
-            <p className="rich-text-paragraph">You have the right to request that we delete any of your Personal Information that we collected from you and retained, subject to certain exceptions.
-              Once we receive your request, verify your identity and determine that we have your information, we will delete your Personal Information from our records, unless an exception under the CCPA applies.
-              In our response to your request to delete, we will specify the manner in which we have deleted your Personal Information or, if we must deny your deletion request, the basis for this refusal.
-            </p>
-            <p className="rich-text-paragraph">CCPA Privacy Choices With Other Companies</p>
+            <p className="rich-text-paragraph">This section describes the privacy rights that you may have and explains how to exercise those rights. You have a right not to receive discriminatory treatment for exercising these privacy rights and Unipod does not discriminate in response to privacy rights requests.</p>
+            <p className="rich-text-paragraph">Privacy Choices With Other Companies</p>
             <p className="rich-text-paragraph">Please note that the privacy choices described above apply specifically to Unipod and the personal information that Unipod collects about you. We do not control the privacy practices of other companies,
               and therefore if you would like for your privacy choices to apply to other companies or to the personal information that we may hold as their service provider, then you will need to reach out directly to the other companies and submit your requests.
             </p>
-            <p className="rich-text-paragraph">California &quot;Shine The Light&quot; Disclosure</p>
-            <p className="rich-text-paragraph">Pursuant to California Civil Code Section 1798.83, we do not disclose information of consumers from whom we directly collect data to third parties for the third parties&apos; direct marketing purposes.</p>
             <p className="rich-text-paragraph">
               <b className="rich-text-bold">Changes to this Policy</b>
             </p>

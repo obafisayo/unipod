@@ -7,7 +7,7 @@ function Terms() {
     <section className=" section legal-content">
       <div id="terms-conditions" className="section__anchor"></div>
       <article className="legal-content__inner">
-        <TextGradient text={"Terms & "} gtext={'Conditions'} activeness={true} modifiedAt={'Last updated: February 01, 2023'}/>
+        <TextGradient text={"Terms & "} gtext={'Conditions'} activeness={true} modifiedAt={'Last updated: June 12, 2026'}/>
         <div className="legal-content__content">
           <p className="rich-text-paragraph">
             <b className="rich-text-bold">Agreement between User and www.unipod.ai</b>
@@ -64,8 +64,8 @@ function Terms() {
             <b className="rich-text-bold">International Users</b>
           </p>
           <p className="rich-text-paragraph">
-            The Service is controlled, operated and administered by Unipod from our offices within the USA.
-            If you access the Service from a location outside the USA, you are responsible for compliance with all local laws.
+            The Service is controlled, operated and administered by Unipod from our offices within Nigeria.
+            If you access the Service from a location outside Nigeria, you are responsible for compliance with all local laws.
             You agree that you will not use the Unipod Content accessed through www.unipod.ai in any country or in any manner prohibited by any applicable laws, restrictions or regulations.
           </p>
           <p className="rich-text-paragraph">
@@ -81,12 +81,12 @@ function Terms() {
             <b className="rich-text-bold">Arbitration</b>
           </p>
           <p className="rich-text-paragraph">In the event the parties are not able to resolve any dispute between them arising out of or concerning these Terms and Conditions, or any provisions hereof, whether in contract, tort,
-            or otherwise at law or in equity for damages or any other relief, then such dispute shall be resolved only by final and binding arbitration pursuant to the Federal Arbitration Act, conducted by a single neutral
-            arbitrator and administered by the American Arbitration Association, or a similar arbitration service selected by the parties, in a location mutually agreed upon by the parties. The arbitrator&apos;s award shall be final,
+            or otherwise at law or in equity for damages or any other relief, then such dispute shall be resolved only by final and binding arbitration pursuant to the Arbitration and Mediation Act of Nigeria, conducted by a single neutral
+            arbitrator and administered by the Lagos Court of Arbitration, or a similar arbitration service selected by the parties, in a location mutually agreed upon by the parties. The arbitrator&apos;s award shall be final,
             and judgment may be entered upon it in any court having jurisdiction. In the event that any legal or equitable action, proceeding or arbitration arises out of or concerns these Terms and Conditions,
             the prevailing party shall be entitled to recover its costs and reasonable attorney&apos;s fees.
             The parties agree to arbitrate all disputes and claims in regards to these Terms and Conditions or any disputes arising as a result of these Terms and Conditions,
-            whether directly or indirectly, including Tort claims that are a result of these Terms and Conditions. The parties agree that the Federal Arbitration Act governs the interpretation and enforcement of this provision.
+            whether directly or indirectly, including Tort claims that are a result of these Terms and Conditions. The parties agree that the Arbitration and Mediation Act of Nigeria governs the interpretation and enforcement of this provision.
             The entire dispute, including the scope and enforceability of this arbitration provision shall be determined by the Arbitrator. This arbitration provision shall survive the termination of these Terms and Conditions.
           </p>
           <p className="rich-text-paragraph">
@@ -115,7 +115,7 @@ function Terms() {
             <b className="rich-text-bold">Termination/Access Restriction</b>
           </p>
           <p className="rich-text-paragraph">Unipod reserves the right, in its sole discretion, to terminate your access to the Site and the related services or any portion thereof at any time, without notice. To the maximum extent permitted by law,
-            this agreement is governed by the laws of the State of California and you hereby consent to the exclusive jurisdiction and venue of courts in California in all disputes arising out of or relating to the use of the Site. Use of the Site is unauthorized in any jurisdiction that does not give effect to all provisions of these Terms,
+            this agreement is governed by the laws of the Federal Republic of Nigeria and you hereby consent to the exclusive jurisdiction and venue of courts in Lagos, Nigeria in all disputes arising out of or relating to the use of the Site. Use of the Site is unauthorized in any jurisdiction that does not give effect to all provisions of these Terms,
             including, without limitation, this section.
           </p>
           <p className="rich-text-paragraph">You agree that no joint venture, partnership, employment, or agency relationship exists between you and Unipod as a result of this agreement or use of the Site.
@@ -132,7 +132,7 @@ function Terms() {
           </p>
           <p className="rich-text-paragraph">Unipod reserves the right, in its sole discretion, to change the Terms under which www.unipod.ai is offered. The most current version of the Terms will supersede all previous versions. Unipod encourages you to periodically review the Terms to stay informed of our updates.
           </p>
-          <p className="rich-text-paragraph">Effective as of February 1, 2023</p>
+          <p className="rich-text-paragraph">Effective as of June 12, 2026</p>
         </div>
       </article>
     </section>

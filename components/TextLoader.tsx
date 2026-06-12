@@ -24,12 +24,12 @@ function TextLoader() {
   }, []);
 
   return (
-    <section className="relative my-[8rem] mx-0 px-[var(--content-padding)] md:my-[15rem]">
+    <section className="relative my-[8rem] mx-0 px-(--content-padding) md:my-[15rem]">
       <div id="rotating-title-component" className="absolute top-[-7.2rem] md:top-[-7.2rem]"></div>
-      <div aria-live="polite" className="flex flex-col gap-[4rem] max-w-[256rem] mx-auto w-full">
-        <div className="h-[0.1rem] w-[21.5rem] relative" style={{ background: 'linear-gradient(270deg,#ff38bb 4.25%,#ff8038 51.61%,#f5be66 80.43%,#f4dca8 93.03%)' }}>
+      <div aria-live="polite" className="flex flex-col gap-[4rem] max-w-1024 mx-auto w-full">
+        <div className="h-[0.1rem] w-[21.5rem] relative bg-[linear-gradient(270deg,#ff38bb_4.25%,#ff8038_51.61%,#f5be66_80.43%,#f4dca8_93.03%)]" >
           <div
-            className="bg-[#cecece] absolute top-0 right-0 w-full h-full z-[2] origin-right"
+            className="bg-[#cecece] absolute top-0 right-0 w-full h-full z-2 origin-right"
             style={{
               transform: isAnimating ? 'scaleX(0)' : 'scaleX(1)',
               transition: isAnimating ? 'transform 5s linear' : 'none',

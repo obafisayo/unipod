@@ -21,9 +21,9 @@ function CareerDoubleImg() {
           .di-grid { grid-template: "a b" "c b"; grid-template-columns: minmax(0,.5fr) minmax(0,.5fr); }
         }
       `}} />
-      <section className="px-[var(--content-padding)]">
+      <section className="px-(--content-padding)">
         <div id="candidates-section" className="absolute top-[-7.2rem] md:top-[-12.8rem]"></div>
-        <div className="di-grid w-full max-w-[256rem] mx-auto grid gap-x-[2rem] md:gap-x-[10rem]">
+        <div className="di-grid w-full max-w-1024 mx-auto grid gap-x-[2rem] md:gap-x-[10rem]">
           <h1 className="di-heading w-full m-0 mb-[6rem] font-neue-haas text-[2.4rem] font-normal leading-[1.1] tracking-[-0.01em] md:text-[3.6rem] md:m-[6rem_0_10rem] lg:m-[6rem_0_18rem]">We&apos;re hiring candidates who are hungry to make their impact across AI, engineering, and design, at our headquarters in Sunnyvale, CA.</h1>
           <div className="di-primary relative w-full h-auto">
             <Image src={office2_600} width={1800} height={2025} alt="" sizes="(min-width: 1440px) 1800px, (min-width: 768px) 1200px, 600px" className="max-w-full h-auto w-full" />

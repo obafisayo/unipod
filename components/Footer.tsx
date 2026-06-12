@@ -1,5 +1,6 @@
 'use client'
 import React, { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import ContactModal from "./ContactModal";
 import ModalButton from "./ModalButton";
@@ -34,16 +35,37 @@ function Footer() {
 
   return (
     <>
-      <footer className="bg-brand-cream pt-40 px-[var(--content-padding)] pb-16">
+      <footer className="bg-brand-cream pt-40 px-(--content-padding) pb-16">
         <div className="grid gap-24 mx-auto max-w-1024 md:grid-cols-2">
           {/* ── Left column ── */}
           <div className="w-full max-w-184">
-            {/* Logo */}
-            <img
-              alt="AI UniPod"
-              src="/assets/ai-unipod-logo.png"
-              className="w-full max-w-2xl h-auto mb-20"
-            />
+            {/* Logos */}
+            <div className="mb-20">
+              <Image
+                alt="AI UniPod"
+                src="/assets/ai-unipod-logo.png"
+                className="w-full max-w-[20rem] h-auto mb-10"
+                width={400}
+                height={100}
+              />
+              <div className="flex items-center gap-8 mt-12">
+                <Image
+                  alt="UNDP"
+                  src="/assets/undp-logo.svg"
+                  className="w-auto h-[7rem]"
+                  width={160}
+                  height={70}
+                />
+                <div className="h-[5.5rem] w-[1px] bg-brand-dark opacity-20 mx-2"></div>
+                <Image
+                  alt="Unilag"
+                  src="/assets/unilag.png"
+                  className="w-auto h-[7rem]"
+                  width={160}
+                  height={70}
+                />
+              </div>
+            </div>
 
             {/* Newsletter */}
             <h3 className="text-[2.4rem] font-medium m-0 mb-[0.4rem] tracking-[-0.01em] font-neue-haas text-brand-dark">
@@ -88,7 +110,7 @@ function Footer() {
                   href={href}
                   aria-label={label}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noreferrer noopener"
                   className="text-brand-dark opacity-85 hover:opacity-45 transition-opacity duration-300 ease-in-out flex text-[1.8rem]"
                 >
                   {icon}
@@ -118,7 +140,7 @@ function Footer() {
               { href: "/about-us", label: "About Us" },
               { href: "/master-plan", label: "Master Plan" },
               { href: "/culture", label: "Culture" },
-              { href: "/careers", label: "Careers" }
+              { href: "/proposals", label: "Proposals" }
             ].map(({ href, label }) => (
               <Link 
                 key={href}

@@ -4,13 +4,13 @@ import NewsBoxes from "./NewsBoxes";
 
 function FigureNews() {
   return (
-    <section className="relative py-[6rem] px-[var(--content-padding)] bg-[#0c0c0c] text-white md:py-[12rem]">
+    <section className="relative py-24 px-(--content-padding) bg-brand-dark text-white md:py-48">
       <div id="unipod-in-the-news" className="absolute top-[-7.2rem] md:top-[-12.8rem]" />
-      <div className="w-full max-w-[256rem] mx-auto">
-        <h2 className="font-neue-haas text-[2.4rem] font-normal leading-[1.1] tracking-[-0.01em] m-0 mb-[4.2rem] md:text-[3.6rem] md:mb-[16rem]">
+      <div className="w-full max-w-1024 mx-auto">
+        <h2 className="font-neue-haas text-[2.4rem] font-normal leading-[1.1] tracking-[-0.01em] m-0 mb-[4.2rem] md:text-[3.6rem] md:mb-64">
           Unipod in the news
         </h2>
-        <div className="grid grid-cols-1 gap-[2rem] md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <NewsBoxes
             href="https://www.undp.org/south-africa/press-releases/undp-and-uj-unveil-south-africas-first-unipod-accelerating-innovation-and-entrepreneurship"
             text="UNDP and UJ unveil South Africa's first UniPod"
