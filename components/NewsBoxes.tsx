@@ -16,7 +16,7 @@ function NewsBoxes({ href, text, text2 }: NewsBoxesProps) {
       href={href}
       title="Read Now"
       target="_blank"
-      rel="noreferrer"
+      rel="noreferrer noopener"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       className="group relative block text-white p-[2.6rem_3.2rem] min-h-[22.2rem] h-full no-underline md:min-h-[31.4rem]"

@@ -10,7 +10,25 @@ import Slider from "./Slider";
 function Footer() {
   const [state, setState] = useState(false)
   const [email, setEmail] = useState('')
+  const [newsletterMsg, setNewsletterMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
   const contactModalRef = useRef<HTMLDivElement>(null)
+
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+  function handleNewsletterSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const trimmed = email.trim()
+    if (!trimmed) {
+      setNewsletterMsg({ type: 'error', text: 'Please enter your email address.' })
+      return
+    }
+    if (!emailRe.test(trimmed)) {
+      setNewsletterMsg({ type: 'error', text: 'Please enter a valid email address.' })
+      return
+    }
+    setNewsletterMsg({ type: 'success', text: 'You\'re signed up! Thanks for subscribing.' })
+    setEmail('')
+  }
 
   function handleContactOpen() {
     document.body.classList.add('is-unscrollable')
@@ -77,7 +95,8 @@ function Footer() {
               Innovation stories, cohorts and open calls from the hub.
             </p>
             <form
-              onSubmit={e => e.preventDefault()}
+              onSubmit={handleNewsletterSubmit}
+              noValidate
               className="flex items-center gap-4 bg-white rounded-[4.6rem] p-[0.5rem_0.5rem_0.5rem_2.4rem] shadow-[0_0.4rem_2rem_rgba(0,0,0,0.06)]"
             >
               <input
@@ -85,7 +104,7 @@ function Footer() {
                 placeholder="Email Address*"
                 aria-label="Email Address"
                 value={email}
-                onChange={e => setEmail(e.target.value)}
+                onChange={e => { setEmail(e.target.value); setNewsletterMsg(null) }}
                 className="flex-1 min-w-0 border-none outline-none bg-transparent font-inherit text-[1.5rem] text-brand-dark"
               />
               <button
@@ -95,6 +114,11 @@ function Footer() {
                 Sign Up
               </button>
             </form>
+            {newsletterMsg && (
+              <p className={`font-neue-haas text-[1.3rem] mt-4 m-0 ${newsletterMsg.type === 'error' ? 'text-red-600' : 'text-green-700'}`} aria-live="polite">
+                {newsletterMsg.text}
+              </p>
+            )}
 
             {/* Social icons */}
             <nav

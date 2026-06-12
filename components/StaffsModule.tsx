@@ -107,7 +107,7 @@ function StaffsModule() {
             {dataCards}
           </ul>
         </div>
-        <div className={`team-modal transition-[opacity,visibility] duration-300 ease-in-out fixed top-0 right-0 bottom-0 left-0 z-[200] flex justify-end bg-[hsla(0,0%,5%,.2)] ${state ? 'opacity-100 visible' : 'opacity-0 invisible'}`} aria-hidden={!state ? "true" : "false"} ref={teamModalRef} onClick={(e) => { if (e.target === e.currentTarget) handleModalButton() }}>
+        <div className={`team-modal transition-[opacity,visibility] duration-300 ease-in-out fixed top-0 right-0 bottom-0 left-0 z-[200] flex justify-end bg-[hsla(0,0%,5%,.2)] ${state ? 'opacity-100 visible' : 'opacity-0 invisible'}`} aria-hidden={!state} ref={teamModalRef} onClick={(e) => { if (e.target === e.currentTarget) handleModalButton() }}>
           <article id={`team-modal-${idState}`} className={`team-modal__content transition-transform duration-300 ease-in-out relative w-full max-w-[48rem] bg-[#f6f6ef] ${state ? 'translate-x-0' : 'translate-x-[100%]'}`} ref={teamModalRef1}>
             <ModalButton onClick={handleModalButton} ariaLabel={'Close team member details'}></ModalButton>
             <TeamModal name={name} title={title} para1={para1} para2={para2} para3={para3} para4={para4} imgsources={img} src={src} />
