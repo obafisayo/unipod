@@ -1,11 +1,9 @@
-import { nanoid } from "nanoid";
-
 const widths = [16, 32, 48, 64, 96, 128, 256, 384, 640, 750, 828, 1080, 1200, 1920, 2048, 3040];
 const make = (src: string) => widths.map((w) => ({ src, width: w }));
 
 const leadershipData = [
     {
-        id: nanoid(),
+        id: "kashim-shettima",
         imgsources: make('/assets/sheittima.jpeg'),
         src: '/assets/sheittima.jpeg',
         name: `His Excellency, Senator Kashim Shettima`,
@@ -16,7 +14,7 @@ const leadershipData = [
         para4: `His vision: a digitally empowered Nigeria where young innovators have the tools, skills, and institutional backing to build solutions that solve local challenges and compete on the global stage.`,
     },
     {
-        id: nanoid(),
+        id: "babajide-sanwo-olu",
         imgsources: make('/assets/sanwolu.jpeg'),
         src: '/assets/sanwolu.jpeg',
         name: `His Excellency, Babajide Sanwo-Olu`,
@@ -27,7 +25,7 @@ const leadershipData = [
         para4: `His vision: to establish Lagos not just as the commercial nerve center of Nigeria, but as the technology and innovation capital of Africa.`,
     },
     {
-        id: nanoid(),
+        id: "folasade-ogunsola",
         imgsources: make('/assets/ogunsola.jpg'),
         src: '/assets/ogunsola.jpg',
         name: `Prof. Folasade T. Ogunsola`,
@@ -38,7 +36,7 @@ const leadershipData = [
         para4: `Her vision: that a student in Akoka should have the same access to tools and opportunity as a student anywhere in the world.`,
     },
     {
-        id: nanoid(),
+        id: "elsie-attafuah",
         imgsources: make('/assets/attafauh.jpg'),
         src: '/assets/attafauh.jpg',
         name: `Elsie G. Attafuah`,
@@ -49,7 +47,7 @@ const leadershipData = [
         para4: `Her work connects the Unipod to UNDP's pan-African network of innovation hubs and the timbuktoo initiative.`,
     },
     {
-        id: nanoid(),
+        id: "chika-yinka-banjo",
         imgsources: make('/assets/yinka-banjo.jpg'),
         src: '/assets/yinka-banjo.jpg',
         name: `Prof. Chika Yinka-Banjo`,
