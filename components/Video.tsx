@@ -190,7 +190,7 @@ function Video({
                 {heading}
               </h1>
               <p
-                className="font-neue-haas text-[1rem] font-normal md:text-[2rem] text-gray-300 font-features-['ss12'_on]"
+                className="font-medium m-0 mb-[0.4rem] tracking-[-0.01em] font-neue-haas md:font-normal text-[1.5rem] md:text-[2rem] text-gray-300 font-features-['ss12'_on]"
               >
                 {subtext}
               </p>
