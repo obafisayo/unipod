@@ -13,7 +13,7 @@ function HumanFormText({ value, title, blackText }: HumanFormTextProps) {
       <dt className={`leading-[1.2] font-neue-haas text-[1.4rem] font-medium tracking-normal ${blackText ? 'text-brand-dark' : 'text-white'}`}>
         {title}
       </dt>
-      <dd className="leading-none font-machina text-[4.2rem] md:text-[10rem] lg:text-[14.5rem] lg:leading-[14.5rem] font-normal tracking-[-0.01em] uppercase text-transparent whitespace-nowrap bg-clip-text bg-[linear-gradient(-90deg,#ff38bb_4.25%,#ff8038_51.61%,#f5be66_80.43%,#f4dca8_93.03%)] font-features-['ss12'_on]">
+      <dd className="leading-none font-machina text-[4.2rem] md:text-[10rem] lg:text-[14.5rem] lg:leading-[14.5rem] font-normal tracking-[-0.01em] uppercase text-transparent whitespace-nowrap bg-clip-text bg-[linear-gradient(-90deg,#23B7CA_0%,#FDAB3B_100%)] font-features-['ss12'_on]">
         <span className="stats-module__number-shuffler">{value}</span>
       </dd>
     </div>

@@ -23,12 +23,12 @@ function NewsBoxes({ href, text, text2 }: NewsBoxesProps) {
     >
       {/* Background elements */}
       <div 
-        className="absolute top-0 left-0 w-full h-full rounded-lg z-2 bg-[linear-gradient(180deg,#ff38bb_5%,#ff8038_55%,#f5be66_65%,#f1fff7_93%)]"
+        className="absolute top-0 left-0 w-full h-full rounded-lg z-2 bg-[linear-gradient(180deg,#23B7CA_0%,#FDAB3B_100%)]"
          
       />
       
       <div 
-        className="absolute top-0 left-0 w-full h-full rounded-lg z-3 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 border-[0.2rem] border-solid [border-image-source:linear-gradient(180deg,#ff38bb_5%,#ff8038_55%,#f5be66_65%,#f1fff7_93%)] [border-image-slice:1] blur-[0.6rem] [transform:translateZ(0)]"
+        className="absolute top-0 left-0 w-full h-full rounded-lg z-3 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 border-[0.2rem] border-solid [border-image-source:linear-gradient(180deg,#23B7CA_0%,#FDAB3B_100%)] [border-image-slice:1] blur-[0.6rem] [transform:translateZ(0)]"
       />
       
       <div className="absolute top-[0.1rem] left-[0.1rem] w-[calc(100%-0.2rem)] h-[calc(100%-0.2rem)] bg-brand-dark rounded-lg z-2" />

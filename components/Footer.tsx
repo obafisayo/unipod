@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ContactModal from "./ContactModal";
 import ModalButton from "./ModalButton";
-import { FaXTwitter, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa6";
+import { FaInstagram, FaLinkedin } from "react-icons/fa6";
 import Slider from "./Slider";
 
 function Footer() {
@@ -49,20 +49,22 @@ function Footer() {
                 height={100}
               />
               <div className="flex items-center gap-8 mt-12">
-                <Image
+                <img
+                  alt="coat of arm"
+                  src="/assets/coatofarm.png"
+                  className="w-auto h-[7rem]"
+                />
+                <div className="h-[5.5rem] w-[1px] bg-brand-dark opacity-20 mx-2"></div>
+                <img
                   alt="UNDP"
                   src="/assets/undp-logo.svg"
                   className="w-auto h-[7rem]"
-                  width={160}
-                  height={70}
                 />
                 <div className="h-[5.5rem] w-[1px] bg-brand-dark opacity-20 mx-2"></div>
-                <Image
+                <img
                   alt="Unilag"
                   src="/assets/unilag.png"
                   className="w-auto h-[7rem]"
-                  width={160}
-                  height={70}
                 />
               </div>
             </div>
@@ -100,10 +102,8 @@ function Footer() {
               aria-label="Social media links"
             >
               {[
-                { icon: <FaXTwitter />, href: 'https://twitter.com/figure_robot', label: 'X (Twitter)' },
-                { icon: <FaInstagram />, href: 'https://www.instagram.com/figure_robot/', label: 'Instagram' },
-                { icon: <FaLinkedin />, href: 'https://www.linkedin.com/company/figure-ai/', label: 'LinkedIn' },
-                { icon: <FaYoutube />, href: 'https://www.youtube.com/@figureai', label: 'YouTube' },
+                { icon: <FaInstagram />, href: 'https://www.instagram.com/aiunipodunilag/', label: 'Instagram' },
+                { icon: <FaLinkedin />, href: 'https://ng.linkedin.com/in/ai-unipod-unilag-aba118401', label: 'LinkedIn' },
               ].map(({ icon, href, label }) => (
                 <a
                   key={label}

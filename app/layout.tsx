@@ -2,9 +2,16 @@ import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
-export const metadata = {
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
   title: 'Unipod — University Innovation Pods',
   description: "Unipod is Africa's network of university innovation pods — turning bold student ideas into ventures with AI & robotics labs, prototyping, mentorship, and investment. Powered by UNDP's timbuktoo initiative.",
+  icons: {
+    icon: '/icon.png',
+    apple: '/icon.png',
+  },
+  manifest: '/site.webmanifest',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

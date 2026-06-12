@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --font-machina: 'pp-neue-machina-plain', serif;
-  --font-neue-haas: 'neue-haas-grot-text', sans-serif;
-  --font-free-sans: 'FreeSans', sans-serif;
-  --color-brand-purple: #797af2;
+  --font-machina: "pp-neue-machina-plain", serif;
+  --font-neue-haas: "neue-haas-grot-text", sans-serif;
+  --font-free-sans: "FreeSans", sans-serif;
+  --color-brand-purple: #23b7ca;
   --color-brand-dark: #0c0c0c;
   --color-brand-cream: #f6f6ef;
 }
@@ -14,40 +14,46 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/pp-neue-machina-plain-regular.woff2') format("woff2");
+  src: url("/fonts/pp-neue-machina-plain-regular.woff2") format("woff2");
 }
 @font-face {
   font-family: neue-haas-grot-text;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/neue-haas-grot-text-55-roman.woff2') format("woff2");
+  src: url("/fonts/neue-haas-grot-text-55-roman.woff2") format("woff2");
 }
 @font-face {
   font-family: neue-haas-grot-text;
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('/fonts/neue-haas-grot-text-65-medium.woff2') format("woff2");
+  src: url("/fonts/neue-haas-grot-text-65-medium.woff2") format("woff2");
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 :root {
   font-size: 62.5%;
   --content-padding: 2.2rem;
-  --purple: #797af2;
+  --purple: #23b7ca;
   --dark: #0c0c0c;
   --cream: #f6f6ef;
 }
 
-img, svg { display: block; max-width: 100%; }
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
 
 body {
   line-height: 1.5;
   font-family: neue-haas-grot-text, sans-serif;
   font-size: 1.6rem;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
   margin: 0;
   color: #0c0c0c;
   background: #fff;
@@ -55,11 +61,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
-body.is-unscrollable { overflow: hidden; }
-body::-webkit-scrollbar { width: 0; height: 0; }
+body.is-unscrollable {
+  overflow: hidden;
+}
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
 
-header { display: block; }
-a { color: inherit; }
+header {
+  display: block;
+}
+a {
+  color: inherit;
+}
 
 /* ---- Reveal on scroll ---- */
 .reveal {
@@ -69,17 +84,26 @@ a { color: inherit; }
 .reveal.in {
   opacity: 1;
   transform: none;
-  transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1 !important; transform: none !important; }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* ---- Navigation (state classes used by JS) ---- */
 .navigation__home-link-wrapper {
-  transition: margin .3s ease-in-out, width .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out;
+  transition:
+    margin 0.3s ease-in-out,
+    width 0.3s ease-in-out,
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
   width: 0;
-  box-shadow: 0 0.4rem 2rem rgba(0,0,0,.08);
+  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.08);
   z-index: 200;
   opacity: 0;
   visibility: hidden;
@@ -105,21 +129,29 @@ a { color: inherit; }
 }
 
 /* ---- Footer CSS counters (cannot be expressed in Tailwind) ---- */
-.number__primary-links { counter-reset: number__primary-links-counter; }
+.number__primary-links {
+  counter-reset: number__primary-links-counter;
+}
 .footer__primary-link {
   counter-increment: number__primary-links-counter;
 }
 
 /* ---- Section utilities ---- */
-.section { position: relative; }
+.section {
+  position: relative;
+}
 .section__anchor {
   position: absolute;
   top: -7.2rem;
 }
-.section--dark { background-color: #0c0c0c; }
+.section--dark {
+  background-color: #0c0c0c;
+}
 
 @media screen and (min-width: 768px) {
-  .section__anchor { top: -12.8rem; }
+  .section__anchor {
+    top: -12.8rem;
+  }
 }
 
 /* ---- Legal / rich text ---- */
@@ -135,20 +167,32 @@ a { color: inherit; }
   font-weight: 400;
   font-size: 1.9rem;
   line-height: 160%;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
 }
-.rich-text-bold { font-weight: 500; font-family: neue-haas-grot-text, sans-serif; }
-.rich-text-link { text-decoration: underline; color: #0c0c0c; }
-strong { font-weight: bold; }
+.rich-text-bold {
+  font-weight: 500;
+  font-family: neue-haas-grot-text, sans-serif;
+}
+.rich-text-link {
+  text-decoration: underline;
+  color: #0c0c0c;
+}
+strong {
+  font-weight: bold;
+}
 
 /* ---- Values ---- */
 .values-module__values {
-  padding: 0; margin: 0; list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
   counter-reset: values-module-counter;
 }
 
 @media screen and (min-width: 768px) {
-  .legal-content { padding: 22rem var(--content-padding) 12rem; }
+  .legal-content {
+    padding: 22rem var(--content-padding) 12rem;
+  }
 }
 
 /* ================================================================
@@ -156,17 +200,25 @@ strong { font-weight: bold; }
    on SVG <stop> elements so the gradient renders correctly)
    ================================================================ */
 .hero-video-progress__linear-gradient-stop-1,
-.gradient-stop--1--1 { stop-color: #ff38bb; }
+.gradient-stop--1--1 {
+  stop-color: #23B7CA;
+}
 .hero-video-progress__linear-gradient-stop-2,
-.gradient-stop--1--2 { stop-color: #ff8038; }
+.gradient-stop--1--2 {
+  stop-color: #7EC281;
+}
 .hero-video-progress__linear-gradient-stop-3,
-.gradient-stop--1--3 { stop-color: #f5be66; }
+.gradient-stop--1--3 {
+  stop-color: #D8CE38;
+}
 .hero-video-progress__linear-gradient-stop-4,
-.gradient-stop--1--4 { stop-color: #f1fff7; }
+.gradient-stop--1--4 {
+  stop-color: #FDAB3B;
+}
 
 /* Ring blur glow — hidden until hovering */
 .hero-video-progress__progress-circle--blur {
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   opacity: 0;
 }
 .hero-video-progress.is-hovering .hero-video-progress__progress-circle--blur {
@@ -175,46 +227,49 @@ strong { font-weight: bold; }
 
 /* Pause bars — hidden by default, two bars via ::before / ::after */
 .hero__icon-pause {
-  transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: space-between;
-  width: .9rem;
+  width: 0.9rem;
   opacity: 0;
   visibility: hidden;
 }
-.hero__icon-pause::before,
-.hero__icon-pause::after {
-  content: "";
-  display: block;
-  width: .1rem;
-  height: 1.8rem;
-  background: linear-gradient(180deg, #ff38bb 5%, #ff8038 55%, #f5be66 65%, #f1fff7 93%);
-}
+
 .hero__icon-pause--blur {
-  transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
   opacity: 0;
-  filter: blur(.15rem);
+  filter: blur(0.15rem);
 }
 /* Solid pause bars — visible while playing */
-.hero__video-toggle.is-playing > .hero__icon-pause:not(.hero__icon-pause--blur) {
+.hero__video-toggle.is-playing
+  > .hero__icon-pause:not(.hero__icon-pause--blur) {
   opacity: 1;
   visibility: visible;
 }
 /* Blurred pause bars — visible while playing + hovering */
-.hero__video-toggle.is-playing.is-hovering > .hero__icon-pause.hero__icon-pause--blur {
+.hero__video-toggle.is-playing.is-hovering
+  > .hero__icon-pause.hero__icon-pause--blur {
   opacity: 1;
   visibility: visible;
 }
 
 /* Play triangle — visible by default, hidden while playing */
 .hero__icon-play {
-  transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
   position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%) translateX(.2rem);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(0.2rem);
   width: 1.2rem;
   height: auto;
   opacity: 1;
@@ -222,7 +277,7 @@ strong { font-weight: bold; }
 }
 .hero__icon-play--blur {
   opacity: 0;
-  filter: blur(.15rem);
+  filter: blur(0.15rem);
 }
 .hero__video-toggle.is-playing > .hero__icon-play {
   opacity: 0;
@@ -233,8 +288,6 @@ strong { font-weight: bold; }
   opacity: 1;
   visibility: visible;
 }
-
-
 
 /* ---- CTA grid responsive ---- */
 @media screen and (max-width: 900px) {

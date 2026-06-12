@@ -1,14 +1,14 @@
-'use client'
+"use client";
 import React, { useEffect, useRef } from "react";
 import Video from "../components/Video";
 import TextLoader from "../components/TextLoader";
 import ImageComponent from "../components/Image";
 import ShortText from "../components/ShortText";
-import FigureNews from "../components/FigureNews";
+import UnipodNews from "../components/UnipodNews";
 import HumanForms from "../components/HumanForms";
 
-const loungeSunset = '/assets/lounge-sunset.jpg'
-const mezzanine = '/assets/mezzanine.jpg'
+const loungeSunset = "/assets/lounge-sunset.jpg";
+const mezzanine = "/assets/mezzanine.jpg";
 
 function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -17,32 +17,32 @@ function Home() {
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach(e => {
+        entries.forEach((e) => {
           if (e.isIntersecting) {
-            e.target.classList.add('in');
+            e.target.classList.add("in");
             io.unobserve(e.target);
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.12 },
     );
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
     // Logo reveal observer
     const navIo = new IntersectionObserver(
       (entries) => {
-        const nav = document.querySelector('.navigation');
+        const nav = document.querySelector(".navigation");
         if (!nav) return;
-        
-        entries.forEach(e => {
+
+        entries.forEach((e) => {
           if (!e.isIntersecting) {
-            nav.classList.add('is-home-link-shown');
+            nav.classList.add("is-home-link-shown");
           } else {
-            nav.classList.remove('is-home-link-shown');
+            nav.classList.remove("is-home-link-shown");
           }
         });
       },
-      { threshold: 0 }
+      { threshold: 0 },
     );
     if (heroRef.current) navIo.observe(heroRef.current);
 
@@ -93,7 +93,7 @@ function Home() {
       />
 
       {/* News */}
-      <FigureNews />
+      <UnipodNews />
 
       {/* Full bleed — mezzanine */}
       <ImageComponent img1={mezzanine} img2={mezzanine} />
@@ -106,6 +106,6 @@ function Home() {
         paragraph="Unipod is powered by a community of academics, engineers, designers, mentors and student founders — all working to turn ideas into impact."
       />
     </main>
-  )
+  );
 }
 export default Home;

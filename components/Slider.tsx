@@ -49,7 +49,7 @@ function Slider({ news, text, icon, plus, arrowUpRight, arrowLeft, arrowRight, s
       '--slider-ls': ls || '0',
       '--slider-color': light ? '#ffffff' : '#0c0c0c',
       '--slider-bg': bgGradient,
-      '--slider-bg-size': hovered ? '0 0.1rem, 100% 0.1rem' : '100% 0.1rem, 0 0.1rem',
+      '--slider-bg-size': (hovered || hover) ? '0 0.1rem, 100% 0.1rem' : '100% 0.1rem, 0 0.1rem',
     } as React.CSSProperties,
   };
 
@@ -62,7 +62,7 @@ function Slider({ news, text, icon, plus, arrowUpRight, arrowLeft, arrowRight, s
         style={{
           '--slider-h': height || '1px',
           '--slider-bc': bordercolor || 'black',
-          '--slider-w': hovered || slide ? '100%' : (unslide ? '0' : (news ? '100%' : '0')),
+          '--slider-w': unslide ? '0' : ((hovered || hover) ? '100%' : '0'),
           '--slider-top': pri ? '4.8rem' : 'auto'
         } as React.CSSProperties}
       />

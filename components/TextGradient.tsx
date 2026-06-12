@@ -17,7 +17,7 @@ function TextGradient({ text, ntext, gtext, activeness, modifiedAt }: TextGradie
           <span className="rotating-text-module__text-prefix">{text}</span>
           <span className="inline transition-opacity duration-300 ease-in-out opacity-100">
             <span>
-              <strong className="bg-clip-text text-transparent font-normal" style={{ backgroundImage: "linear-gradient(270deg,#ff38bb 4.25%,#ff8038 51.61%,#f5be66 80.43%,#f4dca8 93.03%)", WebkitBackgroundClip: "text" }}>
+              <strong className="bg-clip-text text-transparent font-normal" style={{ backgroundImage: "linear-gradient(270deg,#23B7CA 0%,#FDAB3B 100%)", WebkitBackgroundClip: "text" }}>
                 {gtext}
               </strong> {ntext}
             </span>

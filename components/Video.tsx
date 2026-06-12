@@ -5,8 +5,8 @@ import NewsletterMail from "./NewsletterMail";
 import Slider from "./Slider";
 import Button from "./Button";
 
-const figureMaster1 = "/assets/hero-ai-mural.jpg";
-const figureHr1 = "/assets/lounge-sunset.jpg";
+const heroImage = "/assets/hero-ai-mural.jpg";
+const hrImage = "/assets/lounge-sunset.jpg";
 
 interface VideoProps {
   videotobeshown?: string;
@@ -110,7 +110,7 @@ function Video({
 
   // ringStyle removed to use CSS variables on parent
 
-  const whichPicture = career ? figureHr1 : figureMaster1;
+  const whichPicture = career ? hrImage : heroImage;
   const contentClass = `relative mx-auto bg-brand-dark w-full min-h-240 max-w-1024 flex flex-col overflow-hidden aspect-[1500/3248] min-[480px]:aspect-[3840/2160] pt-[8.2rem] px-(--content-padding) pb-0 md:pt-[11.6rem] md:pb-[5rem] md:flex-row md:justify-between ${career ? "hero--layout-2" : ""}`;
 
   return (
@@ -139,7 +139,7 @@ function Video({
             </div>
             <div className="hidden md:block h-full">
               <Image
-                src={figureMaster1}
+                src={heroImage}
                 width={1920}
                 height={1080}
                 alt="Unipod innovation hub"
@@ -227,22 +227,8 @@ function Video({
                     x2="0"
                     y2="0"
                   >
-                    <stop
-                      className="hero-video-progress__linear-gradient-stop-1"
-                      offset="0"
-                    />
-                    <stop
-                      className="hero-video-progress__linear-gradient-stop-2"
-                      offset="0.55"
-                    />
-                    <stop
-                      className="hero-video-progress__linear-gradient-stop-3"
-                      offset="0.68"
-                    />
-                    <stop
-                      className="hero-video-progress__linear-gradient-stop-4"
-                      offset="0.94"
-                    />
+                    <stop stopColor="#23B7CA" offset="0" />
+                    <stop stopColor="#FDAB3B" offset="1" />
                   </linearGradient>
                   <filter
                     id="home-video-progress-blur-filter"
@@ -301,10 +287,51 @@ function Video({
               </svg>
 
               {/* Pause bars — solid */}
-              <span className="hero__icon-pause" />
-              {/* Pause bars — blur glow */}
-              <span className="hero__icon-pause hero__icon-pause--blur" />
-              <span className="hero__icon-pause hero__icon-pause--blur" />
+              <svg
+                className="hero__icon-pause"
+                width="9"
+                height="18"
+                viewBox="0 0 9 18"
+                fill="none"
+              >
+                <defs>
+                  <linearGradient
+                    id="pause-gradient"
+                    x1="4.5"
+                    y1="0"
+                    x2="4.5"
+                    y2="18"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="#23B7CA" offset="0" />
+                    <stop stopColor="#FDAB3B" offset="1" />
+                  </linearGradient>
+                </defs>
+                <rect width="1" height="18" fill="url(#pause-gradient)" />
+                <rect x="8" width="1" height="18" fill="url(#pause-gradient)" />
+              </svg>
+              {/* Pause bars — blur glow 1 */}
+              <svg
+                className="hero__icon-pause hero__icon-pause--blur"
+                width="9"
+                height="18"
+                viewBox="0 0 9 18"
+                fill="none"
+              >
+                <rect width="1" height="18" fill="url(#pause-gradient)" />
+                <rect x="8" width="1" height="18" fill="url(#pause-gradient)" />
+              </svg>
+              {/* Pause bars — blur glow 2 */}
+              <svg
+                className="hero__icon-pause hero__icon-pause--blur"
+                width="9"
+                height="18"
+                viewBox="0 0 9 18"
+                fill="none"
+              >
+                <rect width="1" height="18" fill="url(#pause-gradient)" />
+                <rect x="8" width="1" height="18" fill="url(#pause-gradient)" />
+              </svg>
 
               {/* Play triangle — normal */}
               <svg
@@ -323,11 +350,8 @@ function Video({
                     y2="17.9281"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop className="gradient-stop--1--1" offset="0.0457092" />
-                    <stop className="gradient-stop--1--2" offset="0.554765" />
-                    <stop className="gradient-stop--1--3" offset="0.66346" />
-                    <stop className="gradient-stop--1--4" offset="0.8" />
-                    <stop className="gradient-stop--1--4" offset="1" />
+                    <stop stopColor="#23B7CA" offset="0" />
+                    <stop stopColor="#FDAB3B" offset="1" />
                   </linearGradient>
                 </defs>
                 <mask
@@ -369,11 +393,8 @@ function Video({
                     y2="17.9281"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop className="gradient-stop--1--1" offset="0.0457092" />
-                    <stop className="gradient-stop--1--2" offset="0.554765" />
-                    <stop className="gradient-stop--1--3" offset="0.66346" />
-                    <stop className="gradient-stop--1--4" offset="0.8" />
-                    <stop className="gradient-stop--1--4" offset="1" />
+                    <stop stopColor="#23B7CA" offset="0" />
+                    <stop stopColor="#FDAB3B" offset="1" />
                   </linearGradient>
                 </defs>
                 <mask
@@ -415,11 +436,8 @@ function Video({
                     y2="17.9281"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop className="gradient-stop--1--1" offset="0.0457092" />
-                    <stop className="gradient-stop--1--2" offset="0.554765" />
-                    <stop className="gradient-stop--1--3" offset="0.66346" />
-                    <stop className="gradient-stop--1--4" offset="0.8" />
-                    <stop className="gradient-stop--1--4" offset="1" />
+                    <stop stopColor="#23B7CA" offset="0" />
+                    <stop stopColor="#FDAB3B" offset="1" />
                   </linearGradient>
                 </defs>
                 <mask
@@ -450,7 +468,7 @@ function Video({
               <a
                 target="_blank"
                 rel="noreferrer noopener"
-                href="https://www.undp.org/africa/timbuktoo"
+                href="https://www.instagram.com/reel/DZDUGwTI1Oj/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ=="
                 className="no-underline"
                 title="Watch the full video"
               >

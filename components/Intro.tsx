@@ -17,7 +17,7 @@ function Intro({ name, ntext, gtext, descriptionlink }: IntroProps) {
       <div className="rich-text-page-content__intro-inner w-full max-w-[92rem]">
         <div className="rich-text-page-content__kicker font-neue-haas text-[1.4rem] font-medium leading-[1.2] tracking-normal">{name}</div>
         <h1 className="rich-text-page-content__heading font-machina text-[4.2rem] font-normal leading-none tracking-[-0.01em] uppercase m-[4rem_0] md:text-[6rem] xl:text-[8.5rem] font-features-['ss12'_on]" >
-          <span className="gradient-rich-text__heading-text">{ntext}<strong className="gradient-rich-text__gradient-text font-normal text-transparent bg-clip-text [-webkit-background-clip:text] bg-[linear-gradient(270deg,#ff38bb_4.25%,#ff8038_51.61%,#f5be66_80.43%,#f4dca8_93.03%)] bg-clip-text" >{gtext}</strong></span>
+          <span className="gradient-rich-text__heading-text">{ntext}<strong className="gradient-rich-text__gradient-text font-normal text-transparent bg-clip-text [-webkit-background-clip:text] bg-[linear-gradient(270deg,#23B7CA_0%,#FDAB3B_100%)] bg-clip-text" >{gtext}</strong></span>
         </h1>
         <div className="rich-text-page-content__meta-info font-neue-haas text-[1.4rem] font-medium leading-[1.2] tracking-normal mb-[3rem]">
           <address className="rich-text-page-content__meta-info-author not-italic inline after:content-['•'] after:inline-block after:m-[0_1rem]">By: Brett Adcock, Founder & CEO</address>

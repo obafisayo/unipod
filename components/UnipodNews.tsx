@@ -1,11 +1,14 @@
-'use client'
+"use client";
 import React from "react";
 import NewsBoxes from "./NewsBoxes";
 
-function FigureNews() {
+function UnipodNews() {
   return (
     <section className="relative py-24 px-(--content-padding) bg-brand-dark text-white md:py-48">
-      <div id="unipod-in-the-news" className="absolute top-[-7.2rem] md:top-[-12.8rem]" />
+      <div
+        id="unipod-in-the-news"
+        className="absolute top-[-7.2rem] md:top-[-12.8rem]"
+      />
       <div className="w-full max-w-1024 mx-auto">
         <h2 className="font-neue-haas text-[2.4rem] font-normal leading-[1.1] tracking-[-0.01em] m-0 mb-[4.2rem] md:text-[3.6rem] md:mb-64">
           Unipod in the news
@@ -34,6 +37,6 @@ function FigureNews() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-export default FigureNews;
+export default UnipodNews;

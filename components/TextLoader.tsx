@@ -27,7 +27,7 @@ function TextLoader() {
     <section className="relative my-[8rem] mx-0 px-(--content-padding) md:my-[15rem]">
       <div id="rotating-title-component" className="absolute top-[-7.2rem] md:top-[-7.2rem]"></div>
       <div aria-live="polite" className="flex flex-col gap-[4rem] max-w-1024 mx-auto w-full">
-        <div className="h-[0.1rem] w-[21.5rem] relative bg-[linear-gradient(270deg,#ff38bb_4.25%,#ff8038_51.61%,#f5be66_80.43%,#f4dca8_93.03%)]" >
+        <div className="h-[0.1rem] w-[21.5rem] relative bg-[linear-gradient(270deg,#23B7CA_0%,#FDAB3B_100%)]" >
           <div
             className="bg-[#cecece] absolute top-0 right-0 w-full h-full z-2 origin-right"
             style={{

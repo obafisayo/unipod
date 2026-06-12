@@ -20,7 +20,7 @@ function WorkerModule() {
               <span className="block text-right">deploy autonomous</span>
               <span className="block text-left">humanoid workers</span>
               <span className="block text-right">To support us</span>
-              <span className="block text-left">on a <span className="text-transparent bg-clip-text [-webkit-background-clip:text] bg-[linear-gradient(270deg,#ff38bb_5%,#ff8038_55%,#f5be66_65%,#f1fff7_93%)]" >global scale.</span></span>
+              <span className="block text-left">on a <span className="text-transparent bg-clip-text [-webkit-background-clip:text] bg-[linear-gradient(270deg,#23B7CA_0%,#FDAB3B_100%)]" >global scale.</span></span>
             </h1>
             <h1 className="block md:hidden font-machina text-[4.2rem] font-normal leading-none tracking-[-0.01em] uppercase w-full m-0 font-features-['ss12'_on]" >
               <span className="block text-left">Our goal is</span>
@@ -29,9 +29,9 @@ function WorkerModule() {
               <span className="block text-left">humanoid</span>
               <span className="block text-right">workers to</span>
               <span className="block text-left">support us</span>
-              <span className="block text-left">on a <span className="text-transparent bg-clip-text [-webkit-background-clip:text] bg-[linear-gradient(270deg,#ff38bb_5%,#ff8038_55%,#f5be66_65%,#f1fff7_93%)]" >global</span></span>
+              <span className="block text-left">on a <span className="text-transparent bg-clip-text [-webkit-background-clip:text] bg-[linear-gradient(270deg,#23B7CA_0%,#FDAB3B_100%)]" >global</span></span>
               <span className="block text-right">
-                <span className="text-transparent bg-clip-text [-webkit-background-clip:text] bg-[linear-gradient(270deg,#ff38bb_40%,#ff8038_75%,#f5be66)]" >scale.</span>
+                <span className="text-transparent bg-clip-text [-webkit-background-clip:text] bg-[linear-gradient(270deg,#23B7CA_0%,#FDAB3B_100%)]" >scale.</span>
               </span>
             </h1>
           </div>
