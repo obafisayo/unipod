@@ -12,9 +12,11 @@ interface InputComponentProps {
   input?: boolean;
   name?: string;
   borr?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }
 
-function InputComponent({ text, button, type, width, height, fsz, textarea, input, name, borr }: InputComponentProps) {
+function InputComponent({ text, button, type, width, height, fsz, textarea, input, name, borr, value, onChange }: InputComponentProps) {
   const customInput = useRef<HTMLDivElement>(null)
   const customInputText = useRef<HTMLSpanElement>(null)
   const customInputInput = useRef<HTMLInputElement | HTMLTextAreaElement>(null)
@@ -72,6 +74,8 @@ function InputComponent({ text, button, type, width, height, fsz, textarea, inpu
             style={{ '--input-fsz': fsz || '1.4rem' } as React.CSSProperties}
             name={name} 
             type={type} 
+            value={value}
+            onChange={onChange}
             required 
             aria-invalid="false" 
           />
@@ -90,6 +94,8 @@ function InputComponent({ text, button, type, width, height, fsz, textarea, inpu
             className="transition-transform duration-300 ease-in-out font-neue-haas tracking-[-0.01em] block p-0 w-full bg-transparent border-none outline-none min-h-[13rem] pt-[1.5rem] text-[length:var(--input-fsz)]"
             style={{ '--input-fsz': fsz || '1.4rem' } as React.CSSProperties}
             name={name} 
+            value={value}
+            onChange={onChange}
             required 
             aria-invalid="false"
           />

@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import Button from "./Button";
+import InputComponent from "./InputComponent";
 
 interface NewsletterMailProps {
   background?: string;
@@ -62,18 +63,16 @@ function NewsletterMail({ background, icon, paddingLeft, fsz, width, color, news
         Innovation stories, cohorts and open calls from the hub.
       </p>
       <form noValidate onSubmit={handleSubmit} className="block w-full min-w-[30rem] mt-[2.4rem]" aria-label="Subscribe to newsletter">
-        <div className="flex items-center gap-2 bg-white border border-[hsla(0,0%,5%,.15)] rounded-[2.9rem] px-[1.6rem] h-[5.8rem] shadow-[0_0.4rem_2rem_rgba(0,0,0,0.06)]">
-          <input
-            type="email"
-            placeholder="Email Address*"
-            aria-label="Email Address"
-            value={email}
-            onChange={e => { setEmail(e.target.value); setMsg(null) }}
-            className="flex-1 min-w-0 border-none outline-none bg-transparent font-inherit text-[length:var(--nl-fsz)] text-brand-dark"
-            style={{ '--nl-fsz': fsz || '1.4rem' } as React.CSSProperties}
-          />
-          <Button fsz={fsz} text={'Sign Up'} />
-        </div>
+        <InputComponent 
+          input fsz={fsz} 
+          text={'Email Address'} 
+          value={email}
+          onChange={e => { setEmail(e.target.value); setMsg(null) }} 
+          button={<Button fsz={fsz} text={'Sign Up'}/>} 
+          type={'email'}
+        />
+        <p id="newsletter-newsletter-form" aria-live="polite"></p>
+        {icon}
         {msg && (
           <p className={`font-neue-haas text-[1.3rem] mt-[0.8rem] m-0 ${msg.type === 'error' ? 'text-red-600' : 'text-green-700'}`} aria-live="polite">
             {msg.text}
